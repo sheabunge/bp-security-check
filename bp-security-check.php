@@ -6,7 +6,7 @@
  * Description: Help combat spam registrations by forcing the user to answer a simple sum while registering for your BuddyPress-powered site
  * Author: Shea Bunge
  * Author URI: http://bungeshea.com
- * Version: 1.0-dev
+ * Version: 1.0
  */
 
 class BuddyPress_Security_Check {
