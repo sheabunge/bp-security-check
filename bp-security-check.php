@@ -3,7 +3,7 @@
 /**
  * Plugin Name: BuddyPress Security Check
  * Plugin URI: http://bungeshea.com/plugins/bp-security-check/
- * Description: Help combat spam registrations by forcing the user to answer a simple sum while registering for your BuddyPress-powered site
+ * Description: Help combat spam registrations by forcing the user to answer a simple math sum while registering for your BuddyPress-powered site
  * Author: Shea Bunge
  * Author URI: http://bungeshea.com
  * Version: 1.0
@@ -31,16 +31,12 @@ class BuddyPress_Security_Check {
 			case 1: // addition
 			default:
 				return $a + $b;
-				break;
 			case 2: // subraction
 				return $a - $b;
-				break;
 			case 3: // multiplication
 				return $a * $b;
-				break;
 			case 4: //division
 				return $a / $b;
-				break;
 		}
 	}
 
@@ -94,8 +90,8 @@ class BuddyPress_Security_Check {
 		/* Get a random operation */
 		$op = rand( 1, 4 );
 
-		/* Be sure that the answer will always be positive and that we're not dividing by 0 */
-		if ( ! ( 4 === $op && 0 === $b ) || self::do_sum( $a, $b, $op ) < 0 ) {
+		/* Be sure that the answer will always be positive, that we're not dividing by 0, and the answer is a whole number */
+		if ( self::do_sum( $a, $b, $op ) < 0 || 4 === $op && 0 === $b || 4 === $op && 0 === $a % $b ) {
 			$op = 1;
 		}
 
