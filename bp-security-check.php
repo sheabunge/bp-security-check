@@ -3,7 +3,7 @@
 /**
  * Plugin Name: BuddyPress Security Check
  * Plugin URI: http://bungeshea.com/plugins/bp-security-check/
- * Description: Help combat spam registrations: force the user to answer a simple sum while registering for your BuddyPress-powered site.
+ * Description: Help combat spam registrations by forcing the user to answer a simple sum while registering for your BuddyPress-powered site
  * Author: Shea Bunge
  * Author URI: http://bungeshea.com
  * Version: 1.0-dev
@@ -103,7 +103,7 @@ class BuddyPress_Security_Check {
 		<div style="float: left; clear: left; width: 48%; margin: 12px 0;" class="security-question-section">
 			<h4><?php esc_html_e('Security Question', 'buddypress'); ?></h4>
 			<?php do_action( 'bp_security_check_errors' ); ?>
-			<label for="<?php echo self::$prefix; ?>_answer">
+			<label for="<?php echo self::$prefix; ?>_answer" style="display: inline;">
 				<?php printf( '%1$d %3$s %2$d &#61;', $a, $b, self::format_operation( $op ) ); ?>
 			</label>
 			<input type="hidden" name="<?php echo self::$prefix; ?>_number_a" value="<?php echo $a; ?>" />
