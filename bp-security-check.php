@@ -109,7 +109,7 @@ class BuddyPress_Security_Check {
 			<input type="hidden" name="<?php echo self::$prefix; ?>_number_a" value="<?php echo $a; ?>" />
 			<input type="hidden" name="<?php echo self::$prefix; ?>_number_b" value="<?php echo $b; ?>" />
 			<input type="hidden" name="<?php echo self::$prefix; ?>_operation" value="<?php echo $op; ?>" />
-			<input type="number" name="<?php echo self::$prefix; ?>_answer" min="0" max="20" />
+			<input type="number" name="<?php echo self::$prefix; ?>_answer" min="0" max="20" required="required" />
 		</div>
 		<?php
 	}
