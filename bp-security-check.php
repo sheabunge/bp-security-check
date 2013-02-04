@@ -6,7 +6,7 @@
  * Description: Help combat spam registrations by forcing the user to answer a simple math sum while registering for your BuddyPress-powered site
  * Author: Shea Bunge
  * Author URI: http://bungeshea.com
- * Version: 1.0
+ * Version: 1.0.1
  */
 
 class BuddyPress_Security_Check {
@@ -88,12 +88,7 @@ class BuddyPress_Security_Check {
 		}
 
 		/* Get a random operation */
-		$op = rand( 1, 4 );
-
-		/* Be sure that the answer will always be positive, that we're not dividing by 0, and the answer is a whole number */
-		if ( self::do_sum( $a, $b, $op ) < 0 || 4 === $op && 0 === $b || 4 === $op && 0 === $a % $b ) {
-			$op = 1;
-		}
+		$op = rand( 1, 2 );
 
 		?>
 		<div style="float: left; clear: left; width: 48%; margin: 12px 0;" class="security-question-section">

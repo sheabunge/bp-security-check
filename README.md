@@ -4,7 +4,7 @@ Help combat spam registrations by forcing the user to answer a simple math sum w
 
 ## Description
 
-This plugin will add a field to the BuddyPress registration form where the user will need to answer simple math sum before registering. This is an effort to stop spam bots from registering on your site. The math sum will be composed of adding, subtracting, multiplying, or dividing two random numbers between 0 and 10 (inclusive).
+This plugin will add a field to the BuddyPress registration form where the user will need to answer simple math sum before registering. This is an effort to stop spam bots from registering on your site. The math sum will be composed of adding or subtracting two random numbers between 0 and 10 (inclusive).
 
 You can learn more at the [plugin's website](http://bungeshea.com/plugins/bp-sercurity-check/), or on [WordPress.org](http://wordpress.org/extend/plugins/bp-security-check)
 
@@ -17,6 +17,9 @@ This plugin extends the functionality of [BuddyPress](http://wordpress.org/exten
 3. Done! The plugin has no settings to configure, just install and activate
 
 ## Changelog
+
+### 1.0.1
+* Remove buggy multiplication and division functionality
 
 ### 1.0
 * Stable version release
