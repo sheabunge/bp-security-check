@@ -1,5 +1,9 @@
 # BuddyPress Security Check
 
+* __Tested up to:__ WordPress 3.5.2
+* __Stable version:__ [1.1](http://downloads.wordpress.org/plugin/bp-security-check.latest-stable.zip)
+* __License:__ [MIT](http://opensource.org/licenses/MIT)
+
 Help combat spam registrations by forcing the user to answer a simple math sum while registering for your BuddyPress-powered site
 
 ## Description

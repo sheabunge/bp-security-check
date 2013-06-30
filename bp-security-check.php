@@ -7,6 +7,8 @@
  * Author: Shea Bunge
  * Author URI: http://bungeshea.com
  * Version: 1.0.1
+ * License: MIT
+ * License URI: http://opensource.org/licenses/mit-license.php
  */
 
 class BuddyPress_Security_Check {

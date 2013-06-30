@@ -1,10 +1,10 @@
 === BuddyPress Security Check ===
 Contributors: bungeshea
 Tags: math, registration, buddypress, security, anti-spam
-Tested up to: 3.5.1
+Tested up to: 3.5.2
 Stable tag: 1.0.1
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License: MIT
+License URI: http://opensource.org/licences/MIT
 Donate link: http://bungeshea.com/donate/
 
 Help combat spam registrations by forcing the user to answer a simple math sum while registering for your BuddyPress-powered site
