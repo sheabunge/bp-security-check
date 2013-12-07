@@ -1,6 +1,6 @@
 # BuddyPress Security Check
 
-* __Tested up to:__ WordPress 3.5.2
+* __Tested up to:__ WordPress 3.7.1
 * __Stable version:__ [1.1](http://downloads.wordpress.org/plugin/bp-security-check.latest-stable.zip)
 * __License:__ [MIT](http://opensource.org/licenses/MIT)
 
@@ -10,7 +10,7 @@ Help combat spam registrations by forcing the user to answer a simple math sum w
 
 This plugin will add a field to the BuddyPress registration form where the user will need to answer simple math sum before registering. This is an effort to stop spam bots from registering on your site. The math sum will be composed of adding or subtracting two random numbers between 0 and 10 (inclusive).
 
-You can learn more at the [plugin's website](http://bungeshea.com/plugins/bp-sercurity-check/), or on [WordPress.org](http://wordpress.org/extend/plugins/bp-security-check)
+You can learn more at the [plugin's website](http://bungeshea.com/plugins/bp-security-check/), or on [WordPress.org](http://wordpress.org/plugins/bp-security-check)
 
 ## Installation
 

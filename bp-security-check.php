@@ -2,13 +2,13 @@
 
 /**
  * Plugin Name: BuddyPress Security Check
- * Plugin URI: http://bungeshea.com/plugins/bp-security-check/
+ * Plugin URI:  http://bungeshea.com/plugins/bp-security-check/
  * Description: Help combat spam registrations by forcing the user to answer a simple math sum while registering for your BuddyPress-powered site
- * Author: Shea Bunge
- * Author URI: http://bungeshea.com
- * Version: 1.0.1
- * License: MIT
- * License URI: http://opensource.org/licenses/mit-license.php
+ * Author:      Shea Bunge
+ * Author URI:  http://bungeshea.com
+ * Version:     1.0.1
+ * License:     MIT
+ * License URI: http://opensource.org/licenses/MIT
  */
 
 class BuddyPress_Security_Check {
