@@ -60,7 +60,7 @@ class BuddyPress_Security_Check {
 			case 1: // addition
 			default:
 				return $a + $b;
-			case 2: // subraction
+			case 2: // subtraction
 				return $a - $b;
 			case 3: // multiplication
 				return $a * $b;
@@ -72,21 +72,18 @@ class BuddyPress_Security_Check {
 	/**
 	 * Retrieve the HTML entity for an operation
 	 * @param  integer $op An operator code
-	 * @return string      A HTML entity
+	 * @return string      An HTML entity
 	 */
 	private function format_operation( $op ) {
 
-		switch ( $op ) {
-			case 1: // addition
-			default:
-				return '&#43;';
-			case 2: // subraction
-				return '&#8722;';
-			case 3: // multiplication
-				return '&#215;';
-			case 4: // division
-				return '&#247;';
-		}
+		$ops = array(
+			1 => '&#43;',   // addition
+			2 => '&#8722;', // subtraction
+			3 => '&#215;',  // multiplication
+			4 => '&#247;',  // division
+		);
+
+		return ( isset( $ops[ $op ] ) ? $ops[ $op ] : $ops[1] );
 	}
 
 	/**
