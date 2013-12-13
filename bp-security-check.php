@@ -44,7 +44,7 @@ class BuddyPress_Security_Check {
 	 * @return string             The field's value
 	 */
 	private function get_field_value( $field_name ) {
-		$field_value = $_POST[ $this->prefix . '_' . $field_name ];
+		$field_value = $_POST[ $this->prefix . $field_name ];
 		return apply_filters( 'bp_security_check_get_field_value', $field_value, $field_name );
 	}
 
@@ -136,13 +136,13 @@ class BuddyPress_Security_Check {
 		<div style="float: left; clear: left; width: 48%; margin: 12px 0;" class="security-question-section">
 			<h4><?php esc_html_e('Security Question', 'buddypress'); ?></h4>
 			<?php do_action( 'bp_security_check_errors' ); ?>
-			<label for="<?php echo $this->prefix; ?>_answer" style="display: inline;">
+			<label for="<?php echo $this->prefix; ?>answer" style="display: inline;">
 				<?php printf( '%1$d %3$s %2$d &#61;', $a, $b, $this->format_operation( $op ) ); ?>
 			</label>
-			<input type="hidden" name="<?php echo $this->prefix; ?>_number_a" value="<?php echo $a; ?>" />
-			<input type="hidden" name="<?php echo $this->prefix; ?>_number_b" value="<?php echo $b; ?>" />
-			<input type="hidden" name="<?php echo $this->prefix; ?>_operation" value="<?php echo $op; ?>" />
-			<input type="number" name="<?php echo $this->prefix; ?>_answer" min="0" max="20" required="required" />
+			<input type="hidden" name="<?php echo $this->prefix; ?>number_a" value="<?php echo $a; ?>" />
+			<input type="hidden" name="<?php echo $this->prefix; ?>number_b" value="<?php echo $b; ?>" />
+			<input type="hidden" name="<?php echo $this->prefix; ?>operation" value="<?php echo $op; ?>" />
+			<input type="number" name="<?php echo $this->prefix; ?>answer" min="0" max="20" required="required" />
 		</div>
 		<?php
 	}
@@ -152,7 +152,7 @@ class BuddyPress_Security_Check {
  * Initialize the plugin class
  */
 function bp_security_check_init() {
-	$prefix = apply_filters( 'bp_security_check_prefix', 'security_question' );
+	$prefix = apply_filters( 'bp_security_check_prefix', 'security_question_' );
 	$GLOBALS['bp_security_check'] = new BuddyPress_Security_Check( $prefix );
 }
 
