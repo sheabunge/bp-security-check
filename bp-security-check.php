@@ -87,6 +87,8 @@ class BuddyPress_Security_Check {
 			$a = $b;      // assign $a (lower number) to $b (higher number)
 			$b = $_a;     // assign $b to the original $a
 			unset( $_a ); // destroy the backup variable
+		} elseif ($a == $b) {
+			$a++;  // Increment $a so that we never get 0 and hit validation errors being required
 		}
 
 		/* Get a random operation */
