@@ -102,11 +102,11 @@ class BuddyPress_Security_Check {
 
 		if ( $this->do_sum( $number_a, $number_b, $operation ) !== $answer ) {
 			/* The submitted answer was incorrect */
-			$bp->signup->errors['security_check'] = __('Sorry, please answer the question again','buddypress');
+			$bp->signup->errors['security_check'] = __( 'Sorry, please answer the question again','buddypress' );
 		}
 		elseif ( empty( $answer ) ) {
 			/* The answer field wasn't filled in */
-			$bp->signup->errors['security_check'] = __('This is a required field','buddypress');
+			$bp->signup->errors['security_check'] = __( 'This is a required field','buddypress' );
 		}
 	}
 
@@ -134,7 +134,7 @@ class BuddyPress_Security_Check {
 
 		?>
 		<div style="float: left; clear: left; width: 48%; margin: 12px 0;" class="security-question-section">
-			<h4><?php esc_html_e('Security Question', 'buddypress'); ?></h4>
+			<h4><?php esc_html_e( 'Security Question', 'buddypress' ); ?></h4>
 			<?php do_action( 'bp_security_check_errors' ); ?>
 			<label for="<?php echo $this->prefix; ?>answer" style="display: inline;">
 				<?php printf( '%1$d %3$s %2$d &#61;', $a, $b, $this->format_operation( $op ) ); ?>
