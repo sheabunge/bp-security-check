@@ -31,8 +31,8 @@ class BuddyPress_Security_Check {
 	 * @param string $prefix
 	 */
 	public function __construct( $prefix ) {
-		add_action( 'bp_signup_validate', array( __CLASS__, 'check_validation' ) );
-		add_action( 'bp_after_signup_profile_fields', array( __CLASS__, 'show_input_field' ) );
+		add_action( 'bp_signup_validate', array( $this, 'check_validation' ) );
+		add_action( 'bp_after_signup_profile_fields', array( $this, 'show_input_field' ) );
 
 		$this->prefix = $prefix;
 	}
@@ -56,9 +56,9 @@ class BuddyPress_Security_Check {
 	 * @return integer     The problem's answer
 	 */
 	private function do_sum( $a, $b, $op ) {
-		switch( $op ) {
-			case 1: // addition
+		switch ( $op ) {
 			default:
+			case 1: // addition
 				return $a + $b;
 			case 2: // subtraction
 				return $a - $b;
@@ -99,11 +99,11 @@ class BuddyPress_Security_Check {
 
 		if ( $this->do_sum( $number_a, $number_b, $operation ) !== $answer ) {
 			/* The submitted answer was incorrect */
-			$bp->signup->errors['security_check'] = __( 'Sorry, please answer the question again','buddypress' );
+			$bp->signup->errors['security_check'] = __( 'Sorry, please answer the question again', 'buddypress' );
 		}
 		elseif ( empty( $answer ) ) {
 			/* The answer field wasn't filled in */
-			$bp->signup->errors['security_check'] = __( 'This is a required field','buddypress' );
+			$bp->signup->errors['security_check'] = __( 'This is a required field', 'buddypress' );
 		}
 	}
 
@@ -122,7 +122,7 @@ class BuddyPress_Security_Check {
 			$a = $b;      // assign $a (lower number) to $b (higher number)
 			$b = $_a;     // assign $b to the original $a
 			unset( $_a ); // destroy the backup variable
-		} elseif ($a == $b) {
+		} elseif ( $a == $b ) {
 			$a++;  // Increment $a so that we never get 0 and hit validation errors being required
 		}
 
