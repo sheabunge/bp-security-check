@@ -11,10 +11,25 @@
  * License URI: http://opensource.org/licenses/MIT
  */
 
+/**
+ * Adds a maths sum to the BuddyPress registration page that the user
+ * must answer correctly before registering
+ * @version 1.0.1
+ * @license http://opensource.org/licenses/MIT MIT
+ * @author Shea Bunge (http://bungeshea.com)
+ */
 class BuddyPress_Security_Check {
 
+	/**
+	 * The prefix prepended to for form fields
+	 * @var string
+	 */
 	private $prefix = '';
 
+	/**
+	 * Initialize variables and register hooks
+	 * @param string $prefix
+	 */
 	public function __construct( $prefix ) {
 		add_action( 'bp_signup_validate', array( __CLASS__, 'check_validation' ) );
 		add_action( 'bp_after_signup_profile_fields', array( __CLASS__, 'show_input_field' ) );
@@ -23,11 +38,23 @@ class BuddyPress_Security_Check {
 	}
 
 
+	/**
+	 * Retrieve the value for a form field
+	 * @param  string $field_name The name of the field to retrieve the value for
+	 * @return string             The field's value
+	 */
 	private function get_field_value( $field_name ) {
 		$field_value = $_POST[ $this->prefix . '_' . $field_name ];
 		return apply_filters( 'bp_security_check_get_field_value', $field_value, $field_name );
 	}
 
+	/**
+	 * Retrieve the answer to a maths problem
+	 * @param  integer $a  The first number
+	 * @param  integer $b  The second number
+	 * @param  integer $op The operator code
+	 * @return integer     The problem's answer
+	 */
 	private function do_sum( $a, $b, $op ) {
 		switch( $op ) {
 			case 1: // addition
@@ -42,6 +69,11 @@ class BuddyPress_Security_Check {
 		}
 	}
 
+	/**
+	 * Retrieve the HTML entity for an operation
+	 * @param  integer $op An operator code
+	 * @return string      A HTML entity
+	 */
 	private function format_operation( $op ) {
 
 		switch ( $op ) {
@@ -57,6 +89,9 @@ class BuddyPress_Security_Check {
 		}
 	}
 
+	/**
+	 * Check if the user's input was correct
+	 */
 	public function check_validation(){
 		global $bp;
 
@@ -75,6 +110,9 @@ class BuddyPress_Security_Check {
 		}
 	}
 
+	/**
+	 * Render the input fields
+	 */
 	public function show_input_field() {
 
 		/* Get a random number between 0 and 10 (inclusive) */
@@ -110,6 +148,9 @@ class BuddyPress_Security_Check {
 	}
 }
 
+/**
+ * Initialize the plugin class
+ */
 function bp_security_check_init() {
 	$prefix = apply_filters( 'bp_security_check_prefix', 'security_question' );
 	$GLOBALS['bp_security_check'] = new BuddyPress_Security_Check( $prefix );
