@@ -1,0 +1,27 @@
+{
+  "name": "bp-security-check",
+  "version": "1.0.1",
+  "description": "Help combat spam registrations by forcing the user to answer a simple math sum while registering for your BuddyPress-powered site",
+  "main": "Gruntfile.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bungeshea/bp-security-check.git"
+  },
+  "keywords": [
+    "wordpress-plugin",
+    "buddypress"
+  ],
+  "author": "Shea Bunge",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bungeshea/bp-security-check/issues"
+  },
+  "devDependencies": {
+    "grunt-pot": "~0.1.1",
+    "grunt-po2mo": "~0.1.0",
+    "grunt-checktextdomain": "~0.1.1",
+    "grunt-newer": "~0.6.1",
+    "load-grunt-tasks": "~0.3.0",
+    "grunt": "~0.4.2"
+  }
+}
