@@ -113,8 +113,8 @@ class BuddyPress_Security_Check {
 	public function show_input_field() {
 
 		/* Get a random number between 0 and 10 (inclusive) */
-		$a = rand( 0, 10 );
-		$b = rand( 0, 10 );
+		$a = mt_rand( 0, 10 );
+		$b = mt_rand( 0, 10 );
 
 		/* Make sure that $a is greater then $b; if not, switch them */
 		if ( $b > $a ) {
@@ -125,9 +125,8 @@ class BuddyPress_Security_Check {
 		} elseif ( $a == $b ) {
 			$a++;  // Increment $a so that we never get 0 and hit validation errors being required
 		}
-
 		/* Get a random operation */
-		$op = rand( 1, 2 );
+		$op = mt_rand( 1, 2 );
 
 		?>
 		<div style="float: left; clear: left; width: 48%; margin: 12px 0;" class="security-question-section">
