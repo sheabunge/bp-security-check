@@ -1,6 +1,6 @@
 # BuddyPress Security Check
 
-* __Tested up to:__ WordPress 3.7.1
+* __Tested up to:__ WordPress 3.8.1
 * __Stable version:__ [1.1](http://downloads.wordpress.org/plugin/bp-security-check.latest-stable.zip)
 * __License:__ [MIT](http://opensource.org/licenses/MIT)
 
@@ -14,13 +14,20 @@ You can learn more at the [plugin's website](http://bungeshea.com/plugins/bp-sec
 
 ## Installation
 
-This plugin extends the functionality of [BuddyPress](http://wordpress.org/extend/plugins/buddypress), which must be installed for this plugin to work
+This plugin extends the functionality of [BuddyPress](http://wordpress.org/plugins/buddypress), which must be installed for this plugin to work
 
 1. Upload `bp-security-check.php` to the `/wp-content/plugins/` directory
 2. Activate the plugin through the __(Plugins > Installed Plugins)__ menu in WordPress
 3. Done! The plugin has no settings to configure, just install and activate
 
 ## Changelog
+
+### 1.1
+* Updated to support translations
+* Use mt_rand() function instead of rand()
+* Add code documentation
+* Use proper class methods, not completely static
+* Ensure that the sum never equals 0
 
 ### 1.0.1
 * Remove buggy multiplication and division functionality
