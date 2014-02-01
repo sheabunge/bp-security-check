@@ -14,7 +14,7 @@
 /**
  * Adds a maths sum to the BuddyPress registration page that the user
  * must answer correctly before registering
- * @version 1.0.1
+ * @version 1.1
  * @license http://opensource.org/licenses/MIT MIT
  * @author Shea Bunge (http://bungeshea.com)
  */
