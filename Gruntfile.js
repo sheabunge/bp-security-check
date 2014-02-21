@@ -9,6 +9,7 @@ module.exports = function(grunt) {
 			standard: {
 				options:{
 					text_domain: 'bp-security-check',
+					package_name: 'BuddyPress Security Check',
 					keywords: [
 						'__:1,2d',
 						'_e:1,2d',
