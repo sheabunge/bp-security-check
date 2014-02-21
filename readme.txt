@@ -2,7 +2,7 @@
 Contributors: bungeshea
 Tags: math, registration, buddypress, security, anti-spam
 Tested up to: 3.8.1
-Stable tag: 1.1
+Stable tag: 1.1.0
 License: MIT
 License URI: http://opensource.org/licences/MIT
 Donate link: http://bungeshea.com/donate/
@@ -30,7 +30,7 @@ Great! I'll be happy to answer your support requests, feedback, and suggestions 
 
 == Changelog ==
 
-= 1.1 =
+= 1.1.0 =
 * Updated to support translations
 * Use mt_rand() function instead of rand()
 * Add code documentation
@@ -40,12 +40,12 @@ Great! I'll be happy to answer your support requests, feedback, and suggestions 
 = 1.0.1 =
 * Remove buggy multiplication and division functionality
 
-= 1.0 =
+= 1.0.0 =
 * Stable version release
 
 == Upgrade Notice ==
 
-= 1.1 =
+= 1.1.0 =
 Updated to support translations
 
 = 1.0.1 =

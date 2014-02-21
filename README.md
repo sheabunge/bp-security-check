@@ -1,7 +1,7 @@
 # BuddyPress Security Check
 
 * __Tested up to:__ WordPress 3.8.1
-* __Stable version:__ [1.1](http://downloads.wordpress.org/plugin/bp-security-check.latest-stable.zip)
+* __Stable version:__ [1.1.0](http://downloads.wordpress.org/plugin/bp-security-check.latest-stable.zip)
 * __License:__ [MIT](http://opensource.org/licenses/MIT)
 
 Help combat spam registrations by forcing the user to answer a simple math sum while registering for your BuddyPress-powered site
@@ -22,7 +22,7 @@ This plugin extends the functionality of [BuddyPress](http://wordpress.org/plugi
 
 ## Changelog
 
-### 1.1
+### 1.1.0
 * Updated to support translations
 * Use mt_rand() function instead of rand()
 * Add code documentation
@@ -32,5 +32,5 @@ This plugin extends the functionality of [BuddyPress](http://wordpress.org/plugi
 ### 1.0.1
 * Remove buggy multiplication and division functionality
 
-### 1.0
+### 1.0.0
 * Stable version release
