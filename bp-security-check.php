@@ -152,4 +152,4 @@ function bp_security_check_init() {
 	$GLOBALS['bp_security_check'] = new BuddyPress_Security_Check( $prefix );
 }
 
-add_action( 'bp_init', 'buddypress_security_check_init' );
+add_action( 'bp_init', 'bp_security_check_init' );
