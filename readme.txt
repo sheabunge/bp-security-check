@@ -2,7 +2,7 @@
 Contributors: bungeshea
 Tags: math, registration, buddypress, security, anti-spam
 Tested up to: 3.8.1
-Stable tag: 1.1.0
+Stable tag: 1.1.0.1
 License: MIT
 License URI: http://opensource.org/licences/MIT
 Donate link: http://bungeshea.com/donate/
@@ -30,6 +30,9 @@ Great! I'll be happy to answer your support requests, feedback, and suggestions 
 
 == Changelog ==
 
+= 1.1.0.1 =
+* Fixed bug preventing the plugin from loading
+
 = 1.1.0 =
 * Updated to support translations
 * Use mt_rand() function instead of rand()
@@ -44,6 +47,9 @@ Great! I'll be happy to answer your support requests, feedback, and suggestions 
 * Stable version release
 
 == Upgrade Notice ==
+
+= 1.1.0.1 =
+Fixed bug preventing the plugin from loading
 
 = 1.1.0 =
 Updated to support translations
