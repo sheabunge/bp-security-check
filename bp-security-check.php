@@ -153,3 +153,12 @@ function bp_security_check_init() {
 }
 
 add_action( 'bp_init', 'bp_security_check_init' );
+
+/**
+ * Load up the localization file if we're using WordPress in a different language.
+ */
+function bp_security_check_load_textdomain() {
+	load_plugin_textdomain( 'bp-security-check', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+}
+
+add_action( 'plugins_loaded', 'bp_security_check' );
