@@ -9,6 +9,8 @@
  * Version:     1.1.0.1
  * License:     MIT
  * License URI: http://opensource.org/licenses/MIT
+ * Text Domain: bp-security-check
+ * Domain Path: /languages/
  */
 
 /**
