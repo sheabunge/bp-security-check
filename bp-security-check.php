@@ -20,6 +20,10 @@
  * @license http://opensource.org/licenses/MIT MIT
  * @author Shea Bunge (http://bungeshea.com)
  */
+ 
+ /* Load translation files */
+ load_plugin_textdomain( 'bp-security-check', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+ 
 class BuddyPress_Security_Check {
 
 	/**
