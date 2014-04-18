@@ -164,3 +164,5 @@ function bp_security_check_load_textdomain() {
 }
 
 add_action( 'plugins_loaded', 'bp_security_check' );
+
+function bp_security_check() {}
