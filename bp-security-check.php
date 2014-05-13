@@ -23,31 +23,12 @@
 class BuddyPress_Security_Check {
 
 	/**
-	 * The prefix prepended to for form fields
-	 * @var string
-	 */
-	private $prefix = '';
-
-	/**
 	 * Initialize variables and register hooks
 	 * @param string $prefix
 	 */
 	public function __construct( $prefix ) {
 		add_action( 'bp_signup_validate', array( $this, 'check_validation' ) );
 		add_action( 'bp_after_signup_profile_fields', array( $this, 'show_input_field' ) );
-
-		$this->prefix = $prefix;
-	}
-
-
-	/**
-	 * Retrieve the value for a form field
-	 * @param  string $field_name The name of the field to retrieve the value for
-	 * @return string             The field's value
-	 */
-	private function get_field_value( $field_name ) {
-		$field_value = $_POST[ $this->prefix . $field_name ];
-		return apply_filters( 'bp_security_check_get_field_value', $field_value, $field_name );
 	}
 
 	/**
@@ -94,18 +75,24 @@ class BuddyPress_Security_Check {
 	public function check_validation(){
 		global $bp;
 
-		$number_a  = intval( $this->get_field_value( 'number_a' ) );
-		$number_b  = intval( $this->get_field_value( 'number_b' ) );
-		$answer    = intval( $this->get_field_value( 'answer' ) );
-		$operation = $this->get_field_value( 'operation' );
+		$sum = get_transient( 'bp-security-check' );
 
-		if ( $this->do_sum( $number_a, $number_b, $operation ) !== $answer ) {
+		$number_a  = $sum[0];
+		$operation = $sum[1];
+		$number_b  = $sum[2];
+
+		$answer = intval( $_POST( 'bp-security-check' ) );
+		$result = $this->do_sum( $number_a, $number_b, $operation )
+
+		if ( $result !== $answer ) {
 			/* The submitted answer was incorrect */
 			$bp->signup->errors['security_check'] = __( 'Sorry, please answer the question again', 'bp-security-check' );
 		}
 		elseif ( empty( $answer ) ) {
 			/* The answer field wasn't filled in */
 			$bp->signup->errors['security_check'] = __( 'This is a required field', 'bp-security-check' );
+		} else {
+			delete_transient( 'bp-security-check' );
 		}
 	}
 
@@ -130,17 +117,17 @@ class BuddyPress_Security_Check {
 		/* Get a random operation */
 		$op = mt_rand( 1, 2 );
 
+		/* Save sum information */
+		set_transient( 'bp-security-check', array( $a, $op, $b ) );
+
 		?>
 		<div style="float: left; clear: left; width: 48%; margin: 12px 0;" class="security-question-section">
 			<h4><?php esc_html_e( 'Security Question', 'bp-security-check' ); ?></h4>
 			<?php do_action( 'bp_security_check_errors' ); ?>
-			<label for="<?php echo $this->prefix; ?>answer" style="display: inline;">
+			<label for="bp-security-check" style="display: inline;">
 				<?php printf( '%1$d %3$s %2$d &#61;', $a, $b, $this->format_operation( $op ) ); ?>
 			</label>
-			<input type="hidden" name="<?php echo $this->prefix; ?>number_a" value="<?php echo $a; ?>" />
-			<input type="hidden" name="<?php echo $this->prefix; ?>number_b" value="<?php echo $b; ?>" />
-			<input type="hidden" name="<?php echo $this->prefix; ?>operation" value="<?php echo $op; ?>" />
-			<input type="number" name="<?php echo $this->prefix; ?>answer" min="0" max="20" required="required" />
+			<input type="number" name="bp-security-check" required="required" />
 		</div>
 		<?php
 	}
@@ -150,8 +137,7 @@ class BuddyPress_Security_Check {
  * Initialize the plugin class
  */
 function bp_security_check_init() {
-	$prefix = apply_filters( 'bp_security_check_prefix', 'security_question_' );
-	$GLOBALS['bp_security_check'] = new BuddyPress_Security_Check( $prefix );
+	$GLOBALS['bp_security_check'] = new BuddyPress_Security_Check();
 }
 
 add_action( 'bp_init', 'bp_security_check_init' );
