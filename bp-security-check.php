@@ -42,14 +42,18 @@ function bp_security_check_validate(){
 		$result = $a + $b;
 	}
 
+	/* The submitted answer was incorrect */
 	if ( $result !== $answer ) {
-		/* The submitted answer was incorrect */
 		$bp->signup->errors['security_check'] = __( 'Sorry, please answer the question again', 'bp-security-check' );
 	}
+
+	/* The answer field wasn't filled in */
 	elseif ( empty( $answer ) ) {
-		/* The answer field wasn't filled in */
 		$bp->signup->errors['security_check'] = __( 'This is a required field', 'bp-security-check' );
-	} else {
+	}
+
+	/* Clean up the transient if the answer was correct */
+	else {
 		delete_transient( 'bp-security-check' );
 	}
 }
@@ -66,17 +70,25 @@ function bp_security_check_field() {
 	$a = mt_rand( 0, 10 );
 	$b = mt_rand( 0, 10 );
 
-	/* Make sure that $a is greater then $b; if not, switch them */
-	if ( $b > $a ) {
-		$_a = $a;     // backup $a
-		$a = $b;      // assign $a (lower number) to $b (higher number)
-		$b = $_a;     // assign $b to the original $a
-		unset( $_a ); // destroy the backup variable
-	} elseif ( $a == $b ) {
-		$a++;  // Increment $a so that we never get 0 and hit validation errors being required
-	}
 	/* Get a random operation */
 	$op = mt_rand( 1, 2 );
+
+	/* Make adjustments to the numbers for subtraction */
+	if ( 2 == $op ) {
+
+		/* Make sure that $a is greater then $b; if not, switch them */
+		if ( $b > $a ) {
+			$_a = $a;     // backup $a
+			$a = $b;      // assign $a (lower number) to $b (higher number)
+			$b = $_a;     // assign $b to the original $a
+			unset( $_a ); // destroy the backup variable
+		}
+
+		/* If the numbers are equal then the result will be zero, which will cause an error */
+		elseif ( $a == $b ) {
+			$a++;
+		}
+	}
 
 	/* Save sum information */
 	set_transient( 'bp-security-check', array( $a, $op, $b ) );
