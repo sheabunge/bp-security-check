@@ -49,8 +49,8 @@ module.exports = function(grunt) {
 		po2mo: {
 			files: {
 				src: 'languages/*.po',
-				expand: true,
-			},
+				expand: true
+			}
 		},
 
 		clean: {
@@ -77,7 +77,7 @@ module.exports = function(grunt) {
 
 	});
 
-	grunt.registerTask( 'l18n', ['checktextdomain', 'pot', 'newer:po2mo'] );
+	grunt.registerTask( 'l18n', ['checktextdomain', 'pot' ] );
 	grunt.registerTask( 'build', ['clean:build', 'copy:build'] );
 	grunt.registerTask( 'default', ['l18n', 'build'] );
 	grunt.registerTask( 'release', ['default', 'wp_deploy'] );

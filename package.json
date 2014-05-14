@@ -21,7 +21,6 @@
     "grunt-pot": "~0.1.1",
     "grunt-po2mo": "~0.1.0",
     "grunt-checktextdomain": "~0.1.1",
-    "grunt-newer": "~0.6.1",
     "load-grunt-tasks": "~0.3.0",
     "grunt": "~0.4.2",
     "grunt-wp-deploy": "^0.3.0",
