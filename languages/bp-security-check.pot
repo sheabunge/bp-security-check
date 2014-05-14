@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: bp-security-check 1.3.0\n"
+"Project-Id-Version: bp-security-check 1.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-10 17:17+1000\n"
+"POT-Creation-Date: 2014-05-14 10:14+1000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,14 +17,14 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: bp-security-check.php:104
+#: bp-security-check.php:56
 msgid "Sorry, please answer the question again"
 msgstr ""
 
-#: bp-security-check.php:108
+#: bp-security-check.php:61
 msgid "This is a required field"
 msgstr ""
 
-#: bp-security-check.php:135
+#: bp-security-check.php:107
 msgid "Security Question"
 msgstr ""

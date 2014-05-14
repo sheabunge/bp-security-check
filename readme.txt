@@ -33,6 +33,8 @@ Great! I'll be happy to answer your support requests, feedback, and suggestions 
 = 1.2.0 =
 * Added Hungarian translation by Laszlo Espadas
 * Added Brazilian Portuguese translation by Renato Alves
+* Saved sum information in database instead of hidden fields in an attempt to prevent bots
+* Code refactoring
 
 = 1.1.0.1 =
 * Fixed bug preventing the plugin from loading
@@ -51,6 +53,9 @@ Great! I'll be happy to answer your support requests, feedback, and suggestions 
 * Stable version release
 
 == Upgrade Notice ==
+
+= 1.2.0 =
+New translations plus fixes to prevent bots
 
 = 1.1.0.1 =
 Fixed bug preventing the plugin from loading

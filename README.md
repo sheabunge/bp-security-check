@@ -25,6 +25,8 @@ This plugin extends the functionality of [BuddyPress](http://wordpress.org/plugi
 ### 1.2.0
 * Added Hungarian translation by Laszlo Espadas
 * Added Brazilian Portuguese translation by Renato Alves
+* Saved sum information in database instead of hidden fields in an attempt to prevent bots
+* Code refactoring
 
 ### 1.1.0.1
 * Fixed bug preventing the plugin from loading
