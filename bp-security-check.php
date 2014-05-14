@@ -34,7 +34,7 @@ function bp_security_check_validate(){
 	$number_b  = $sum[2];
 
 	$answer = intval( $_POST( 'bp-security-check' ) );
-	$result = $this->do_sum( $number_a, $number_b, $operation )
+	$result = $this->do_sum( $number_a, $number_b, $operation );
 
 	/* Calculate the actual answer */
 	if ( 2 == $op ) {
