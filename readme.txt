@@ -23,11 +23,6 @@ This plugin extends the functionality of [BuddyPress](http://wordpress.org/plugi
 2. Activate the plugin through the __(Plugins > Installed Plugins)__ menu in WordPress
 3. Done! The plugin has no settings to configure, just install and activate
 
-== Frequently Asked Questions ==
-
-= I have a question… =
-Great! I'll be happy to answer your support requests, feedback, and suggestions in the [Support Forums](http://wordpress.org/support/plugin/bp-security-check)
-
 == Changelog ==
 
 = 1.2.0 =
