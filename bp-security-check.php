@@ -22,6 +22,15 @@
  */
 
 /**
+ * Load up the localization file if we're using WordPress in a different language.
+ */
+function bp_security_check_load_textdomain() {
+	load_plugin_textdomain( 'bp-security-check', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+}
+
+add_action( 'plugins_loaded', 'bp_security_check_load_textdomain' );
+
+/**
  * Check if the user's input was correct
  */
 function bp_security_check_validate(){
@@ -122,13 +131,5 @@ function bp_security_check_field() {
 	</div>
 	<?php
 }
+
 add_action( 'bp_after_signup_profile_fields', 'bp_security_check_field' );
-
-/**
- * Load up the localization file if we're using WordPress in a different language.
- */
-function bp_security_check_load_textdomain() {
-	load_plugin_textdomain( 'bp-security-check', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
-}
-
-add_action( 'plugins_loaded', 'bp_security_check_load_textdomain' );
