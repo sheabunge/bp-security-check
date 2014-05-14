@@ -33,7 +33,7 @@ add_action( 'plugins_loaded', 'bp_security_check_load_textdomain' );
 /**
  * Check if the user's input was correct
  */
-function bp_security_check_validate(){
+function bp_security_check_validate() {
 	global $bp;
 
 	$sum = get_transient( 'bp-security-check' );
