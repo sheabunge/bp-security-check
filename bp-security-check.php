@@ -99,8 +99,8 @@ function bp_security_check_field() {
 		}
 	}
 
-	/* Save sum information */
-	set_transient( 'bp-security-check', array( $a, $op, $b ) );
+	/* Save sum information (expiry = 12 hours) */
+	set_transient( 'bp-security-check', array( $a, $op, $b ), 12 * 60 * 60 );
 
 	?>
 	<div style="float: left; clear: left; width: 48%; margin: 12px 0;" class="security-question-section">
