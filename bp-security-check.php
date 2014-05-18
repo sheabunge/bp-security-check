@@ -38,11 +38,11 @@ function bp_security_check_validate() {
 
 	$sum = get_transient( 'bp-security-check' );
 
-	$number_a  = $sum[0];
-	$operation = $sum[1];
-	$number_b  = $sum[2];
+	$a  = $sum[0];
+	$op = $sum[1];
+	$b  = $sum[2];
 
-	$answer = intval( $_POST( 'bp-security-check' ) );
+	$answer = intval( $_POST['bp-security-check'] );
 
 	/* Calculate the actual answer */
 	if ( 2 == $op ) {
