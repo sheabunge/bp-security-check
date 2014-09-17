@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bp-security-check 1.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-14 10:21+1000\n"
+"POT-Creation-Date: 2014-09-17 19:07+1000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,14 +17,14 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: bp-security-check.php:56
+#: bp-security-check.php:57
 msgid "Sorry, please answer the question again"
 msgstr ""
 
-#: bp-security-check.php:61
+#: bp-security-check.php:62
 msgid "This is a required field"
 msgstr ""
 
-#: bp-security-check.php:107
+#: bp-security-check.php:111
 msgid "Security Question"
 msgstr ""
