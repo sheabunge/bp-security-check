@@ -1,8 +1,8 @@
 === BuddyPress Security Check ===
 Contributors: bungeshea
 Tags: math, registration, buddypress, security, anti-spam
-Tested up to: 3.9.1
-Stable tag: 1.2.0
+Tested up to: 4.0
+Stable tag: 1.3.0
 License: MIT
 License URI: http://opensource.org/licences/MIT
 Donate link: http://bungeshea.com/donate/
@@ -24,6 +24,10 @@ This plugin extends the functionality of [BuddyPress](http://wordpress.org/plugi
 3. Done! The plugin has no settings to configure, just install and activate
 
 == Changelog ==
+
+= 1.3.0 =
+* Added Italian translation by [Nicole Curioni](http://nicolecurioni.com/)
+* Made transient names unique to prevent race conditions
 
 = 1.2.0 =
 * Added Hungarian translation by Laszlo Espadas
