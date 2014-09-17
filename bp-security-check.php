@@ -64,7 +64,7 @@ function bp_security_check_validate() {
 
 	/* Clean up the transient if the answer was correct */
 	else {
-		delete_transient( 'bp-security-check' );
+		delete_transient( 'bp-security-check' . $uid );
 	}
 }
 
