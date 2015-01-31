@@ -28,4 +28,4 @@ msgstr "Dette felt er obligatorisk"
 
 #: bp-security-check.php:107
 msgid "Security Question"
-msgstr "Sikkerheds spørgsmål"
+msgstr "Sikkerhedsspørgsmål"
