@@ -34,6 +34,9 @@ This plugin extends the functionality of [BuddyPress](http://wordpress.org/plugi
 
 == Changelog ==
 
+= 1.3.1 =
+* Fixed incorrect term in Danish translation (Sikkerhedsspørgsmål is a single word) [[#](https://wordpress.org/support/topic/translation-293)]
+
 = 1.3.0 =
 * Added Danish translation by Andreas Bjørn Hassing Nielsen
 * Added Italian translation by [Nicole Curioni](http://nicolecurioni.com/)
@@ -62,6 +65,9 @@ This plugin extends the functionality of [BuddyPress](http://wordpress.org/plugi
 * Stable version release
 
 == Upgrade Notice ==
+
+= 1.3.1 =
+Updated Danish translation
 
 = 1.2.0 =
 New translations plus fixes to prevent bots
