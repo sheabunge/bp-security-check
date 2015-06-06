@@ -36,7 +36,7 @@ add_action( 'plugins_loaded', 'bp_security_check_load_textdomain' );
 function bp_security_check_validate() {
 	global $bp;
 
-	$uid = $_POST['bp-security-check-id'];
+	$uid = $_POST['bp-security-check-uid'];
 	$sum = get_transient( 'bp-security-check_' . $uid );
 
 	$a  = $sum[0];
@@ -64,7 +64,7 @@ function bp_security_check_validate() {
 
 	/* Clean up the transient if the answer was correct */
 	else {
-		delete_transient( 'bp-security-check' . $uid );
+		delete_transient( 'bp-security-check_' . $uid );
 	}
 }
 
@@ -81,10 +81,10 @@ function bp_security_check_field() {
 	$b = mt_rand( 0, 10 );
 
 	/* Get a random operation */
-	$op = mt_rand( 1, 2 );
+	$op = mt_rand( 0, 100 ) > 50 ? 'add' : 'sub';
 
 	/* Make adjustments to the numbers for subtraction */
-	if ( 2 == $op ) {
+	if ( 'sub' === $op ) {
 
 		/* Make sure that $a is greater then $b; if not, switch them */
 		if ( $b > $a ) {
@@ -104,7 +104,7 @@ function bp_security_check_field() {
 	$uid = uniqid();
 
 	/* Save sum information (expiry = 12 hours) */
-	set_transient( 'bp-security-check_' . $uid, array( $a, $op, $b ), 12 * 60 * 60 );
+	set_transient( 'bp-security-check_' . $uid, array( $a, $op, $b ), 12 * HOUR_IN_SECONDS );
 
 	?>
 	<div style="float: left; clear: left; width: 48%; margin: 12px 0;" class="security-question-section">
@@ -113,26 +113,21 @@ function bp_security_check_field() {
 		<label for="bp-security-check" style="display: inline;">
 			<?php
 
-			/* First number */
-			echo $a;
+			// &#61; = equals
+			// &#43; = addition
+			// &#8722; = subtraction
 
-			/* Print operation as proper HTML entity */
-			if ( 2 == $op ) {
-				echo ' &#8722; '; // subtraction
-			} else {
-				echo ' &#43; '; // addition
-			}
-
-			/* Second number */
-			echo $b;
-
-			/* Equals symbol */
-			echo ' &#61;';
+			// a + b =
+			printf(
+				'%1$d %3$s %2$d &#61;',
+				$a, $b,
+				'sub' == $op ? '&#8722;' : '&#43;'
+			);
 
 			?>
 		</label>
-		<input type="hidden" name="bp-security-check-id" value="<?php echo $uid; ?>" />
-		<input type="number" name="bp-security-check" required="required" />
+		<input type="hidden" name="bp-security-check-uid" value="<?php echo $uid; ?>" />
+		<input type="number" name="bp-security-check" id="bp-security-check" required="required" />
 	</div>
 	<?php
 }
