@@ -34,7 +34,7 @@ class Settings {
 		    add_settings_field(
 			    'bp-security-check-' . $field['id'],
 			    $field['name'],
-			    array( $this, 'render_field' ),
+			    array( $this, 'render' ),
 			    'buddypress',
 			    'bp_security_check',
 			    $field
@@ -42,8 +42,17 @@ class Settings {
 	    }
     }
 
+	/**
+	 * Retrieve the saved setting values
+	 * @return array
+	 */
+	public function get() {
+		return $this->get_defaults();
+	}
+
 	public function render_field( $field ) {
 		$field['value'] = $field['default'];
+		$field['input_name'] = 'bp_security_check[' . $field['id'] . ']';
 
 		call_user_func(
 			array( $this, $field['type'] . '_input_field' ),
@@ -60,14 +69,14 @@ class Settings {
 
 		$fields = array(
 			array(
-				'id' => 'recapacha-site-key',
+				'id' => 'recapacha_site_key',
 				'name' => __( 'reCAPTCHA site key', 'bp-security-check' ),
 				'type' => 'text',
 				'default' => '',
 			),
 			array(
-				'id' => 'recapacha-secret',
-				'name' => __( 'reCAPTCHA secret', 'bp-security-check' ),
+				'id' => 'recapacha_secret_key',
+				'name' => __( 'reCAPTCHA secret key', 'bp-security-check' ),
 				'type' => 'text',
 				'default' => '',
 			)
@@ -89,7 +98,7 @@ class Settings {
 
 	public function text_input_field( $atts ) {
 		printf( '<input type="%s" name="%s" value="%s">',
-			$atts['type'], $atts['id'], $atts['value']
+			$atts['type'], $atts['input_name'], $atts['value']
 		);
 	}
 }

@@ -2,7 +2,7 @@
 
 namespace Shea\BP_Security_Check;
 
-class Security_Check {
+class Math_Check {
 
 	/**
 	 * Holds the instance of the plugin class
@@ -17,7 +17,7 @@ class Security_Check {
     }
 
     function run() {
-        add_action( 'bp_after_signup_profile_fields', array( $this, 'render_field' ) );
+        add_action( 'bp_after_signup_profile_fields', array( $this, 'render' ) );
         add_action( 'bp_signup_validate', array( $this, 'validate' ) );
     }
 
@@ -62,7 +62,7 @@ class Security_Check {
     /**
      * Render the input fields
      */
-    function render_field() {
+    function render() {
 
     	/* Get a random number between 0 and 10 (inclusive) */
     	$a = mt_rand( 0, 10 );
