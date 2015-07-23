@@ -1,0 +1,18 @@
+{
+    "name": "sheabunge/bp-security-check",
+    "description": "WordPress plugin to prevent spam BuddyPress registrations",
+    "type": "wordpress-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Shea Bunge",
+            "email": "info@bungeshea.com"
+        }
+    ],
+    "require": {
+        "google/recaptcha": "~1.1"
+    },
+    "autoload" : {
+        "classmap" : ["php/"]
+    }
+}
