@@ -4,10 +4,16 @@ namespace Shea\BP_Security_Check;
 
 class Security_Check {
 
+	/**
+	 * Holds the instance of the plugin class
+	 * @var Plugin
+	 */
+	private $plugin;
+
     public $prefix = 'bp-security-check_';
 
-    function __construct() {
-
+    function __construct( Plugin $plugin ) {
+		$this->plugin = $plugin;
     }
 
     function run() {

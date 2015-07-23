@@ -8,38 +8,45 @@ namespace Shea\BP_Security_Check;
  */
 class Plugin {
 
-    /**
-     * @var string
-     */
-    public $version = '';
+	/**
+	 * @var string
+	 */
+	public $version = '';
 
-    /**
-     * @var string
-     */
-    public $file = '';
+	/**
+	 * @var string
+	 */
+	public $file = '';
 
-    /**
-     * @var Security_Check
-     */
-    public $security_check;
+	/**
+	 * @var Settings
+	 */
+	public $settings;
 
-    /**
-     * Constructor
-     * @param $version
-     * @param $file
-     */
+	/**
+	 * @var Security_Check
+	 */
+	public $security_check;
+
+	/**
+	 * Constructor
+	 * @param $version
+	 * @param $file
+	 */
 	function __construct( $version, $file ) {
-        $this->file = $file;
-        $this->version = $version;
+		$this->file = $file;
+		$this->version = $version;
 
-        $this->security_check = new Security_Check();
-    }
+		$this->settings = new Settings( $this );
+		$this->security_check = new Security_Check( $this );
+	}
 
-    /**
-     * Run the class's actions
-     */
+	/**
+	 * Run the class's actions
+	 */
 	function run() {
-        $this->security_check->run();
+		$this->settings->run();
+		$this->security_check->run();
 
 		add_action( 'plugins_loaded', array( $this, 'load_textdomain' ) );
 	}
