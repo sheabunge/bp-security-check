@@ -13,6 +13,8 @@
  * Domain Path: /languages/
  */
 
+namespace Shea\BP_Security_Check;
+
 /**
  * Adds a maths sum to the BuddyPress registration page that the user
  * must answer correctly before registering
@@ -22,114 +24,48 @@
  */
 
 /**
- * Load up the localization file if we're using WordPress in a different language.
+ * Should be set to the Plugin Version defined above
+ * @var string
  */
-function bp_security_check_load_textdomain() {
-	load_plugin_textdomain( 'bp-security-check', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
-}
-
-add_action( 'plugins_loaded', 'bp_security_check_load_textdomain' );
+const VERSION = '1.3.2';
 
 /**
- * Check if the user's input was correct
+ * Enable autoloading of plugin classes in namespace
+ * @param $class_name
  */
-function bp_security_check_validate() {
-	global $bp;
+function autoload( $class_name ) {
 
-	$uid = $_POST['bp-security-check-uid'];
-	$sum = get_transient( 'bp-security-check_' . $uid );
-
-	$a  = $sum[0];
-	$op = $sum[1];
-	$b  = $sum[2];
-
-	$answer = intval( $_POST['bp-security-check'] );
-
-	/* Calculate the actual answer */
-	if ( 2 == $op ) {
-		$result = $a - $b;
-	} else {
-		$result = $a + $b;
+	/* Only autoload classes from this namespace */
+	if ( false === strpos( $class_name, __NAMESPACE__ ) ) {
+		return;
 	}
 
-	/* The submitted answer was incorrect */
-	if ( $result !== $answer ) {
-		$bp->signup->errors['security_check'] = __( 'Sorry, please answer the question again', 'bp-security-check' );
-	}
+	/* Remove namespace from class name */
+	$class_file = str_replace( __NAMESPACE__ . '\\', '', $class_name );
 
-	/* The answer field wasn't filled in */
-	elseif ( empty( $answer ) ) {
-		$bp->signup->errors['security_check'] = __( 'This is a required field', 'bp-security-check' );
-	}
+	/* Convert class name format to file name format */
+	$class_file = strtolower( $class_file );
+	$class_file = str_replace( '_', '-', $class_file );
 
-	/* Clean up the transient if the answer was correct */
-	else {
-		delete_transient( 'bp-security-check_' . $uid );
-	}
+	/* Convert sub-namespaces into directories */
+	$class_path = explode( '\\', $class_file );
+	$class_file = array_pop( $class_path );
+	$class_path = implode( '/', $class_path );
+
+	/* Load the class */
+	require_once __DIR__ . '/php/' . $class_path . '/class-' . $class_file . '.php';
 }
 
-add_action( 'bp_signup_validate', 'bp_security_check_validate' );
+spl_autoload_register( __NAMESPACE__ . '\autoload' );
 
+/* Initialise the plugin class */
+$plugin = new Plugin( VERSION, __FILE__ );
+add_action( 'plugins_loaded', array( $plugin, 'run' ) );
 
-/**
- * Render the input fields
- */
-function bp_security_check_field() {
-
-	/* Get a random number between 0 and 10 (inclusive) */
-	$a = mt_rand( 0, 10 );
-	$b = mt_rand( 0, 10 );
-
-	/* Get a random operation */
-	$op = mt_rand( 0, 100 ) > 50 ? 'add' : 'sub';
-
-	/* Make adjustments to the numbers for subtraction */
-	if ( 'sub' === $op ) {
-
-		/* Make sure that $a is greater then $b; if not, switch them */
-		if ( $b > $a ) {
-			$_a = $a;     // backup $a
-			$a = $b;      // assign $a (lower number) to $b (higher number)
-			$b = $_a;     // assign $b to the original $a
-			unset( $_a ); // destroy the backup variable
-		}
-
-		/* If the numbers are equal then the result will be zero, which will cause an error */
-		elseif ( $a == $b ) {
-			$a++;
-		}
+/* Make class accessible to other plugins */
+add_filter(
+	'bp_security_check',
+	function () use ( $plugin ) {
+		return $plugin;
 	}
-
-	/* Generate a unique ID to save the sum information under */
-	$uid = uniqid();
-
-	/* Save sum information (expiry = 12 hours) */
-	set_transient( 'bp-security-check_' . $uid, array( $a, $op, $b ), 12 * HOUR_IN_SECONDS );
-
-	?>
-	<div style="float: left; clear: left; width: 48%; margin: 12px 0;" class="security-question-section">
-		<h4><?php esc_html_e( 'Security Question', 'bp-security-check' ); ?></h4>
-		<?php do_action( 'bp_security_check_errors' ); ?>
-		<label for="bp-security-check" style="display: inline;">
-			<?php
-
-			// &#61; = equals
-			// &#43; = addition
-			// &#8722; = subtraction
-
-			// a + b =
-			printf(
-				'%1$d %3$s %2$d &#61;',
-				$a, $b,
-				'sub' == $op ? '&#8722;' : '&#43;'
-			);
-
-			?>
-		</label>
-		<input type="hidden" name="bp-security-check-uid" value="<?php echo $uid; ?>" />
-		<input type="number" name="bp-security-check" id="bp-security-check" required="required" />
-	</div>
-	<?php
-}
-
-add_action( 'bp_after_signup_profile_fields', 'bp_security_check_field' );
+);
