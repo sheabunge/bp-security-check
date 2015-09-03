@@ -16,6 +16,7 @@ You can learn more at the [plugin's website](http://bungeshea.com/plugins/bp-sec
 
 Thanks to the awesome work of the following translators, this plugin can be used in these languages:
 
+* **French** thanks to Frédérick Baldo
 * **Serbo-Croatian** thanks to [Andrijana Nikolic from WebHostingGeeks](https://webhostinggeeks.com)
 * **Hungarian** thanks to Laszlo Espadas
 * **Brazilian Portuguese** thanks to Renato Alves
