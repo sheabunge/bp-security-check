@@ -39,6 +39,7 @@ This plugin extends the functionality of [BuddyPress](http://wordpress.org/plugi
 ### 1.4.0
 * Added Serbo-Croatian translation by [Andrijana Nikolic from WebHostingGeeks](https://webhostinggeeks.com)
 * Added French translation by Frédérick Baldo
+* Fixed subtraction sums always being marked incorrect
 
 ### 1.3.2
 * Added Spanish translation by Renato Alves
