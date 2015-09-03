@@ -1,8 +1,8 @@
 === BuddyPress Security Check ===
 Contributors: bungeshea
 Tags: math, registration, buddypress, security, anti-spam
-Tested up to: 4.1
-Stable tag: 1.3.2
+Tested up to: 4.3
+Stable tag: 1.4
 License: MIT
 License URI: http://opensource.org/licences/MIT
 Donate link: http://bungeshea.com/donate/
@@ -19,6 +19,8 @@ You can learn more at the [plugin website](http://bungeshea.com/plugins/bp-secur
 
 Thanks to the awesome work of the following translators, this plugin can be used in these languages:
 
+* **French** thanks to Frédérick Baldo
+* **Serbo-Croatian** thanks to [Andrijana Nikolic from WebHostingGeeks](https://webhostinggeeks.com)
 * **Spanish** thanks to Renato Alves
 * **Hungarian** thanks to Laszlo Espadas
 * **Brazilian Portuguese** thanks to Renato Alves
@@ -34,6 +36,10 @@ This plugin extends the functionality of [BuddyPress](http://wordpress.org/plugi
 3. Done! The plugin has no settings to configure, just install and activate
 
 == Changelog ==
+
+= 1.4.0 =
+* Added Serbo-Croatian translation by [Andrijana Nikolic from WebHostingGeeks](https://webhostinggeeks.com)
+* Added French translation by Frédérick Baldo
 
 = 1.3.2 =
 * Added Spanish translation by Renato Alves

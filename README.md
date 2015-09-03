@@ -1,7 +1,7 @@
 # BuddyPress Security Check
 
-* __Tested up to:__ WordPress 4.1
-* __Stable version:__ [1.3.2](http://downloads.wordpress.org/plugin/bp-security-check.latest-stable.zip)
+* __Tested up to:__ WordPress 4.3
+* __Stable version:__ [1.4](http://downloads.wordpress.org/plugin/bp-security-check.latest-stable.zip)
 * __License:__ [MIT](http://opensource.org/licenses/MIT)
 
 Help combat spam registrations by forcing the user to answer a simple math sum while registering for your BuddyPress-powered site
@@ -18,6 +18,7 @@ Thanks to the awesome work of the following translators, this plugin can be used
 
 * **French** thanks to Frédérick Baldo
 * **Serbo-Croatian** thanks to [Andrijana Nikolic from WebHostingGeeks](https://webhostinggeeks.com)
+* **Spanish** thanks to Renato Alves
 * **Hungarian** thanks to Laszlo Espadas
 * **Brazilian Portuguese** thanks to Renato Alves
 * **Danish** thanks to Andreas Bjørn Hassing Nielsen
@@ -34,6 +35,13 @@ This plugin extends the functionality of [BuddyPress](http://wordpress.org/plugi
 3. Done! The plugin has no settings to configure, just install and activate
 
 ## Changelog
+
+### 1.4.0
+* Added Serbo-Croatian translation by [Andrijana Nikolic from WebHostingGeeks](https://webhostinggeeks.com)
+* Added French translation by Frédérick Baldo
+
+### 1.3.2
+* Added Spanish translation by Renato Alves
 
 ### 1.3.1
 * Fixed incorrect term in Danish translation (Sikkerhedsspørgsmål is a single word) [[#](https://wordpress.org/support/topic/translation-293)]
