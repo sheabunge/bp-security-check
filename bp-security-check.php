@@ -46,7 +46,7 @@ function bp_security_check_validate() {
 	$answer = intval( $_POST['bp-security-check'] );
 
 	/* Calculate the actual answer */
-	if ( 2 == $op ) {
+	if ( 'sub' == $op ) {
 		$result = $a - $b;
 	} else {
 		$result = $a + $b;
