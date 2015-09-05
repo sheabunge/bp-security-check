@@ -10,6 +10,7 @@
         }
     ],
     "require": {
+        "composer/installers": "~1.0",
         "google/recaptcha": "~1.1"
     },
     "autoload" : {
