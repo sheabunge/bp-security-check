@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: bp-security-check 1.3.2\n"
+"Project-Id-Version: bp-security-check 1.4.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-23 19:58+1000\n"
+"POT-Creation-Date: 2015-09-05 17:20+1000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,26 +17,34 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: php/class-security-check.php:42
+#: php/class-math-check.php:48
 msgid "Sorry, please answer the question again"
 msgstr ""
 
-#: php/class-security-check.php:47
+#: php/class-math-check.php:53
 msgid "This is a required field"
 msgstr ""
 
-#: php/class-security-check.php:93
+#: php/class-math-check.php:99
 msgid "Security Question"
 msgstr ""
 
-#: php/class-settings.php:18
-msgid "Security Check Settings"
+#: php/class-recaptcha-check.php:56
+msgid "Please answer the security question"
 msgstr ""
 
-#: php/class-settings.php:54
+#: php/class-recaptcha-check.php:64
+msgid "Sorry, please complete the security check again"
+msgstr ""
+
+#: php/class-settings.php:64
 msgid "reCAPTCHA site key"
 msgstr ""
 
-#: php/class-settings.php:60
-msgid "reCAPTCHA secret"
+#: php/class-settings.php:71
+msgid "reCAPTCHA secret key"
+msgstr ""
+
+#: php/class-settings.php:102
+msgid "Security Check Settings"
 msgstr ""

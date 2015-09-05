@@ -34,29 +34,29 @@ class Math_Check {
     	$op = $sum[1];
     	$b  = $sum[2];
 
-    	$answer = intval( $_POST['bp-security-check'] );
+	    $answer = intval( $_POST['bp-security-check'] );
 
-    	/* Calculate the actual answer */
-    	if ( 2 == $op ) {
-    		$result = $a - $b;
-    	} else {
-    		$result = $a + $b;
-    	}
+	    /* Calculate the actual answer */
+	    if ( 'sub' == $op ) {
+		    $result = $a - $b;
+	    } else {
+		    $result = $a + $b;
+	    }
 
-    	/* The submitted answer was incorrect */
-    	if ( $result !== $answer ) {
-    		$bp->signup->errors['security_check'] = __( 'Sorry, please answer the question again', 'bp-security-check' );
-    	}
+	    /* The submitted answer was incorrect */
+	    if ( $result !== $answer ) {
+		    $bp->signup->errors['security_check'] = __( 'Sorry, please answer the question again', 'bp-security-check' );
+	    }
 
-    	/* The answer field wasn't filled in */
-    	elseif ( empty( $answer ) ) {
-    		$bp->signup->errors['security_check'] = __( 'This is a required field', 'bp-security-check' );
-    	}
+	    /* The answer field wasn't filled in */
+	    elseif ( empty( $answer ) ) {
+		    $bp->signup->errors['security_check'] = __( 'This is a required field', 'bp-security-check' );
+	    }
 
-    	/* Clean up the transient if the answer was correct */
-    	else {
-    		delete_transient( $this->prefix . $uid );
-    	}
+	    /* Clean up the transient if the answer was correct */
+	    else {
+		    delete_transient( 'bp-security-check_' . $uid );
+	    }
     }
 
     /**

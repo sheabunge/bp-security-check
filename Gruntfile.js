@@ -28,9 +28,9 @@ module.exports = function(grunt) {
 					]
 				},
 				files: [{
-					src: ['**/*.php', '!node_modules/**/*.php', '!build/**/*.php'],
-					expand: true,
-				}],
+					src: ['*.php'],
+					expand: true
+				}]
 			}
 		},
 
@@ -38,12 +38,12 @@ module.exports = function(grunt) {
 			options:{
 				text_domain: 'bp-security-check',
 				dest: 'languages/',
-				keywords: ['__','_e','esc_html__','esc_html_e','esc_attr__', 'esc_attr_e', 'esc_attr_x', 'esc_html_x', 'ngettext', '_n', '_ex', '_nx'],
+				keywords: ['__','_e','esc_html__','esc_html_e','esc_attr__', 'esc_attr_e', 'esc_attr_x', 'esc_html_x', 'ngettext', '_n', '_ex', '_nx']
 			},
 			files: {
 				src: ['*.php', 'php/**/*.php'],
-				expand: true,
-			},
+				expand: true
+			}
 		},
 
 		po2mo: {
