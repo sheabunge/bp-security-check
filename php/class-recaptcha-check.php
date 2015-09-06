@@ -3,16 +3,28 @@
 namespace Shea\BP_Security_Check;
 use \ReCaptcha\ReCaptcha;
 
-
+/**
+ * Handles the ReCaptcha security check
+ * @package Shea\BP_Security_Check
+ */
 class Recaptcha_Check {
 
 	/**
+	 * The main plugin class
 	 * @var Plugin
 	 */
 	protected $plugin;
 
+	/**
+	 * The ReCaptcha site key
+	 * @var string
+	 */
 	public $site_key;
 
+	/**
+	 * The ReCaptcha secret key
+	 * @var string
+	 */
 	public $secret_key;
 
 	/**
@@ -43,6 +55,7 @@ class Recaptcha_Check {
 
 		<div style="float: left; clear: left; margin: 12px 0;" class="security-question-section">
 			<?php do_action( 'bp_security_check_errors' ); ?>
+
 			<div class="g-recaptcha" data-sitekey="<?php echo esc_attr( $this->site_key ); ?>"></div>
 		</div>
 
