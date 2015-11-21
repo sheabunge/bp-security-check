@@ -35,7 +35,7 @@ class Settings {
 	 *
 	 * @param string $setting_id The (unprefixed) setting ID
 	 *
-	 * @return mixed|null The setting value, null if non-existant setting
+	 * @return mixed|null The setting value, null if non-existent setting
 	 */
 	public function get_setting( $setting_id ) {
 		$defaults = $this->get_defaults();
@@ -59,20 +59,31 @@ class Settings {
 		}
 
 		$fields = array(
-			array(
-				'id' => 'recaptcha_site_key',
+
+			'type' => array(
+				'name' => __( 'Security check type', 'bp-security-check' ),
+				'type' => 'radio',
+				'default' => 'recaptcha',
+				'options' => array(
+					'math' => __( 'Legacy math check', 'bp-security-check' ),
+					'recaptcha' => __( 'New <a href="https://www.google.com/recaptcha">reCAPTCHA</a> check', 'bp-security-check' ),
+				),
+				'desc' => __( 'If you choose to use the reCAPTCHA check, you will need to <a href="https://www.google.com/recaptcha/admin">register your site with Google</a> and enter the site key and secret here.' ),
+			),
+
+			'recaptcha_site_key' => array(
 				'name' => __( 'reCAPTCHA site key', 'bp-security-check' ),
 				'type' => 'text',
 				'default' => '',
 				'size' => 40,
 			),
-			array(
-				'id' => 'recaptcha_secret_key',
+
+			'recaptcha_secret_key' => array(
 				'name' => __( 'reCAPTCHA secret key', 'bp-security-check' ),
 				'type' => 'text',
 				'default' => '',
 				'size' => 40,
-			)
+			),
 		);
 
 		return $fields;
@@ -89,7 +100,12 @@ class Settings {
 			return $defaults;
 		}
 
-		$defaults = wp_list_pluck( $this->get_fields(), 'default', 'id' );
+		$defaults = array();
+
+		foreach ( $this->get_fields() as $id => $field ) {
+			$defaults[ $id ] = $field[ 'default' ];
+		}
+
 		return $defaults;
 	}
 
@@ -104,7 +120,15 @@ class Settings {
 			'buddypress'
 		);
 
-		foreach ( $this->get_fields() as $field ) {
+		$fields = $this->get_fields();
+
+		if ( 'recaptcha' !== $this->get_setting( 'type' ) ) {
+			unset( $fields['type']['desc'] );
+			unset( $fields['recaptcha_site_key'] );
+			unset( $fields['recaptcha_secret_key'] );
+		}
+
+		foreach ( $this->get_fields() as $id => $field ) {
 
 			$field = array_merge( array(
 				'id' => '',
@@ -114,12 +138,8 @@ class Settings {
 				'sanitize' => '',
 			), $field );
 
-			if ( empty( $field['id'] ) ) {
-				continue;
-			}
-
-			$field['short_id'] = $field['id'];
-			$field['id'] = 'bp_security_check_' . $field['id'];
+			$field['short_id'] = $id;
+			$field['id'] = 'bp_security_check_' . $id;
 			$field['value'] = get_option( $field['id'], $field['default'] );
 
 			register_setting( 'buddypress', $field['id'], $field['sanitize'] );
@@ -146,8 +166,8 @@ class Settings {
 		if ( isset( $_GET['page'] ) && 'bp-settings' === $_GET['page'] && ! empty( $_POST['submit'] ) ) {
 			check_admin_referer( 'buddypress-options' );
 
-			foreach ( $this->get_fields() as $field ) {
-				$id = 'bp_security_check_' . $field['id'];
+			foreach ( $this->get_fields() as $id => $field ) {
+				$id = 'bp_security_check_' . $id;
 
 				if ( ! isset( $_POST[ $id ] ) ) {
 					continue;
@@ -163,7 +183,7 @@ class Settings {
 
 	/**
 	 * Render a text input field
-	 * @param $field
+	 * @param array $field
 	 */
 	public function text_input_field( $field ) {
 		$extra = '';
@@ -175,5 +195,30 @@ class Settings {
 		printf( '<input type="%s" name="%s" value="%s"%s>',
 			$field['type'], $field['id'], $field['value'], $extra
 		);
+	}
+
+	/**
+	 * Render a radio input field
+	 * @param array $field
+	 */
+	public function radio_input_field( $field ) {
+		echo '<p>';
+		$radios = array();
+
+		foreach ( $field['options'] as $option => $label ) {
+			$radios[] = sprintf(
+				'<label><input name="%s" type="radio" value="%s"%s> %s</label>',
+				$field['id'],
+				$option,
+				checked( $option, $field['value'], false ),
+				$label
+			);
+		}
+
+		echo implode( '<br>', $radios ), '</p>';
+
+		if ( isset( $field['desc'] ) ) {
+			echo '<br><p class="description">', $field['desc'], '</p>';
+		}
 	}
 }

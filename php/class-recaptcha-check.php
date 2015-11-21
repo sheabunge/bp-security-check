@@ -34,22 +34,32 @@ class Recaptcha_Check {
 		$this->plugin = $plugin;
 	}
 
+	/**
+	 * Register hooks
+	 */
 	public function run() {
 		$this->site_key = $this->plugin->settings->get_setting( 'recaptcha_site_key' );
 		$this->secret_key = $this->plugin->settings->get_setting( 'recaptcha_secret_key' );
+
+		if ( ! $this->site_key || ! $this->secret_key ) {
+			return;
+		}
 
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_script' ) );
 		add_action( 'bp_after_signup_profile_fields', array( $this, 'render' ) );
 		add_action( 'bp_signup_validate', array( $this, 'validate' ) );
 	}
 
+	/**
+	 * Enqueue the reCAPTCHA script
+	 */
 	public function enqueue_script() {
-		wp_enqueue_script(
-			'google-recaptcha',
-			'https://www.google.com/recaptcha/api.js'
-		);
+		wp_enqueue_script( 'google-recaptcha', 'https://www.google.com/recaptcha/api.js' );
 	}
 
+	/**
+	 * Render the security question
+	 */
 	public function render() {
 		?>
 
@@ -62,6 +72,9 @@ class Recaptcha_Check {
 		<?php
 	}
 
+	/**
+	 * Validate the security question
+	 */
 	public function validate() {
 		global $bp;
 
@@ -74,7 +87,7 @@ class Recaptcha_Check {
 		$response = $recaptcha->verify( $_POST['g-recaptcha-response'] );
 
 		if ( ! $response->isSuccess() ) {
-			$bp->signup->errors['security_check'] = __( 'Sorry, please complete the security check again', 'bp-security-check' );
+			$bp->signup->errors['security_check'] = __( 'Please complete the security check again', 'bp-security-check' );
 		}
 
 	}

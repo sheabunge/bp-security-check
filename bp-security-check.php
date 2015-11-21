@@ -23,18 +23,21 @@
 
 namespace Shea\BP_Security_Check;
 
-if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
-	require_once __DIR__ . '/vendor/autoload.php';
+require __DIR__ . '/vendor/autoload.php';
+
+/**
+ * Retrieve the instance of the plugin class
+ * @return Plugin
+ */
+function plugin() {
+	static $plugin;
+
+	if ( is_null( $plugin ) ) {
+		$plugin = new Plugin( '1.3.2', __FILE__ );
+	}
+
+	return $plugin;
 }
 
-/* Initialise the plugin class */
-$plugin = new Plugin( '1.3.2', __FILE__ );
-add_action( 'plugins_loaded', array( $plugin, 'run' ) );
+add_action( 'plugins_loaded', array( plugin(), 'run' ) );
 
-/* Make class accessible to other plugins */
-add_filter(
-	'bp_security_check',
-	function () use ( $plugin ) {
-		return $plugin;
-	}
-);
