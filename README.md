@@ -16,6 +16,7 @@ You can learn more at the [plugin's website](http://bungeshea.com/plugins/bp-sec
 
 Thanks to the awesome work of the following translators, this plugin can be used in these languages:
 
+* **Swedish** thanks to [Thord D. Hedengren](http://tdh.me)
 * **French** thanks to Frédérick Baldo
 * **Serbo-Croatian** thanks to [Andrijana Nikolic from WebHostingGeeks](https://webhostinggeeks.com)
 * **Spanish** thanks to Renato Alves
@@ -35,6 +36,9 @@ This plugin extends the functionality of [BuddyPress](http://wordpress.org/plugi
 3. Done! The plugin has no settings to configure, just install and activate
 
 ## Changelog
+
+### 2.0.0
+* Added Swedish translation by [Thord D. Hedengren](http://tdh.me)
 
 ### 1.4.0
 * Added Serbo-Croatian translation by [Andrijana Nikolic from WebHostingGeeks](https://webhostinggeeks.com)
