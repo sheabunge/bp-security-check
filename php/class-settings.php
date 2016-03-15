@@ -128,7 +128,7 @@ class Settings {
 			unset( $fields['recaptcha_secret_key'] );
 		}
 
-		foreach ( $this->get_fields() as $id => $field ) {
+		foreach ( $fields as $id => $field ) {
 
 			$field = array_merge( array(
 				'id' => '',
@@ -173,7 +173,7 @@ class Settings {
 					continue;
 				}
 
-				if ( 'text' === $field['type'] ) {
+				if ( 'text' === $field['type'] || 'radio' === $field['type'] ) {
 					$value = preg_replace( '/[^A-Za-z0-9_]/', '', $_POST[ $id ] );
 					update_option( $id, $value );
 				}
