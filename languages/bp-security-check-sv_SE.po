@@ -1,0 +1,51 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: bp-security-check 1.4.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-11 15:58+0100\n"
+"PO-Revision-Date: 2015-11-11 16:00+0100\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.6\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: sv\n"
+
+#: php/class-math-check.php:48
+msgid "Sorry, please answer the question again"
+msgstr "Tyvärr, vänligen svara på frågan igen"
+
+#: php/class-math-check.php:53
+msgid "This is a required field"
+msgstr "Obligatoriskt fält"
+
+#: php/class-math-check.php:99
+msgid "Security Question"
+msgstr "Säkerhetsfråga"
+
+#: php/class-recaptcha-check.php:56
+msgid "Please answer the security question"
+msgstr "Vänligen besvara säkerhetsfrågan"
+
+#: php/class-recaptcha-check.php:64
+msgid "Sorry, please complete the security check again"
+msgstr "Tyvärr, vänligen fyll i säkerhetskontrollen igen"
+
+#: php/class-settings.php:64
+msgid "reCAPTCHA site key"
+msgstr "reCAPTCHA webbplatsnyckel"
+
+#: php/class-settings.php:71
+msgid "reCAPTCHA secret key"
+msgstr "reCAPTCHA hemliga nyckel"
+
+#: php/class-settings.php:102
+msgid "Security Check Settings"
+msgstr "Säkerhetskontroll"
