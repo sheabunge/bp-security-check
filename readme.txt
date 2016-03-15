@@ -17,9 +17,9 @@ This plugin adds [Google's reCAPTCHA](https://www.google.com/recaptcha/) to the 
 
 reCAPTCHA is "tough on bots, easy on humans": while it is increbianle effective on preventing bots from registering, most of the time all the user needs to do to verify themselves is simply check a box.
 
-After installing this plugin, you will need to [register your site with Google](https://www.google.com/recaptcha/admin) (requires a Google account) and enter the site key and secret key on the **Settings > BuddyPress > Settings** admin menu. If you would prefer not to use Google's service, there is an alternative security check method also available; see below;
+After installing this plugin, you will need to [register your site with Google](https://www.google.com/recaptcha/admin) (requires a Google account) and enter the site key and secret key on the **Settings > BuddyPress > Options** admin menu. If you would prefer not to use Google's service, there is an alternative security check method also available; see below;
 
-Prior to version 2.0, a less effective security check method was used where the user needed to answer simple math sum before registering. This method is still available, and can be turned on on the **Settings > BuddyPress > Settings** menu.
+Prior to version 2.0, a less effective security check method was used where the user needed to answer simple math sum before registering. This method is still available, and can be turned on on the **Settings > BuddyPress > Options** menu.
 
 You can learn more at the [plugin's website](https://bungeshea.com/plugins/bp-security-check/), or on [GitHub](https://github.com/sheabunge/bp-security-check)
 
@@ -44,8 +44,8 @@ If you have a translation to contribute, please sent it through to me [by email]
 This plugin extends the functionality of [BuddyPress](https://wordpress.org/plugins/buddypress), which must be installed for this plugin to work
 
 1. Upload the `bp-security-check` directory to `/wp-content/plugins/`
-2. Activate the plugin through the __(Plugins > Installed Plugins)__ menu in WordPress
-2. Visit the **Settings > BuddyPress > Settings** admin menu
+2. Activate the plugin through the **Plugins > Installed Plugins** menu in WordPress
+2. Visit the **Settings > BuddyPress > Options** admin menu
 3. If you want to use the more secure reCAPTCHA mode, you will need to [register your site with Google](https://www.google.com/recaptcha/admin) and enter the site and secret keys. Otherwise, choose the 'legacy math method' to turn on security checks.
 
 == Changelog ==
