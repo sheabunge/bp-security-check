@@ -5,7 +5,7 @@ Tested up to: 4.3
 Stable tag: 1.4
 License: MIT
 License URI: http://opensource.org/licences/MIT
-Donate link: http://bungeshea.com/donate/
+Donate link: https://bungeshea.com/donate/
 
 Help combat spam registrations by forcing the user to answer a simple math sum while registering for your BuddyPress-powered site
 
