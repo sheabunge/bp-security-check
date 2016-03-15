@@ -59,7 +59,13 @@ module.exports = function(grunt) {
 
 		copy: {
 			build: {
-				src: ['bp-security-check.php', 'readme.txt', 'languages/**/*'],
+				src: [
+					'*.php',
+					'readme.txt',
+					'languages/**/*',
+					'php/**/*',
+					'vendor/**/*'
+				],
 				dest: 'build',
 				expand: true
 			}
@@ -74,7 +80,6 @@ module.exports = function(grunt) {
 				}
 			}
 		}
-
 	});
 
 	grunt.registerTask( 'l18n', ['checktextdomain', 'pot' ] );
