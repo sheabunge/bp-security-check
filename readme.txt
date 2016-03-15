@@ -99,6 +99,9 @@ This plugin extends the functionality of [BuddyPress](https://wordpress.org/plug
 
 == Upgrade Notice ==
 
+= 2.0.0 =
+(Requires PHP 3.5 or later) Added reCAPTCHA check
+
 = 1.3.2 =
 Added Spanish translation
 
