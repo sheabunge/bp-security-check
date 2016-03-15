@@ -1,14 +1,22 @@
 # BuddyPress Security Check
 
-* __Tested up to:__ WordPress 4.3
+* __Tested up to:__ WordPress 4.4.2
 * __Stable version:__ [1.4](https://downloads.wordpress.org/plugin/bp-security-check.latest-stable.zip)
 * __License:__ [MIT](https://opensource.org/licenses/MIT)
 
-Help combat spam registrations by forcing the user to answer a simple math sum while registering for your BuddyPress-powered site
+Combat spam registrations for a BuddyPress-powered site using Google's reCAPTCHA
 
 ## Description
 
-This plugin will add a field to the BuddyPress registration form where the user will need to answer simple math sum before registering. This is an effort to stop spam bots from registering on your site. The math sum will be composed of adding or subtracting two random numbers between 0 and 10 (inclusive).
+> **Important**: Since version 2.0, this plugin now requires at least PHP 5.3. Please make sure you are running latest available version of PHP on your server.
+
+This plugin adds [Google's reCAPTCHA](https://www.google.com/recaptcha/) to the BuddyPress registration field to prevent bots from registering and keep your site free from spam registrations. 
+
+reCAPTCHA is "tough on bots, easy on humans": while it is increbianle effective on preventing bots from registering, most of the time all the user needs to do to verify themselves is simply check a box. 
+
+After installing this plugin, you will need to [register your site with Google](https://www.google.com/recaptcha/admin) (requires a Google account) and enter the site key and secret key on the **Settings > BuddyPress > Settings** admin menu. If you would prefer not to use Google's service, there is an alternative security check method also available; see below;
+
+Prior to version 2.0, a less effective security check method was used where the user needed to answer simple math sum before registering. This method is still available, and can be turned on on the **Settings > BuddyPress > Settings** menu.
 
 You can learn more at the [plugin's website](https://bungeshea.com/plugins/bp-security-check/), or on [WordPress.org](https://wordpress.org/plugins/bp-security-check)
 
@@ -32,13 +40,18 @@ If you have a translation to contribute, please sent it through to me [by email]
 
 This plugin extends the functionality of [BuddyPress](https://wordpress.org/plugins/buddypress), which must be installed for this plugin to work
 
-1. Upload `bp-security-check.php` to the `/wp-content/plugins/` directory
+1. Upload the `bp-security-check` directory to `/wp-content/plugins/`
 2. Activate the plugin through the __(Plugins > Installed Plugins)__ menu in WordPress
-3. Done! The plugin has no settings to configure, just install and activate
+2. Visit the **Settings > BuddyPress > Settings** admin menu
+3. If you want to use the more secure reCAPTCHA mode, you will need to [register your site with Google](https://www.google.com/recaptcha/admin) and enter the site and secret keys. Otherwise, choose the 'legacy math method' to turn on security checks.
 
 ## Changelog
 
 ### 2.0.0
+* Converted code to class-based OOP format with namespaces
+* Added plugin settings
+* Implemented Composer for package management and classloading
+* Added reCaPTCHA security check method
 * Added Swedish translation by [Thord D. Hedengren](http://tdh.me)
 * Added Russian translation by [Howard Steele from SuperbWebsiteBuilders.com](http://superbwebsitebuilders.com/)
 
