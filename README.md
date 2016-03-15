@@ -27,7 +27,7 @@ Thanks to the awesome work of the following translators, this plugin can be used
 * **Russian** thanks to [Howard Steele from SuperbWebsiteBuilders.com](http://superbwebsitebuilders.com/)
 * **Swedish** thanks to [Thord D. Hedengren](http://tdh.me)
 * **French** thanks to Frédérick Baldo
-* **Serbo-Croatian** thanks to [Andrijana Nikolic from WebHostingGeeks](https://webhostinggeeks.com)
+* **Serbo-Croatian** thanks to [Andrijana Nikolic from WebHostingGeeks](https://webhostinggeeks.com) and [Ogi Djuraskovic from FirstSiteGuide.com](http://firstsiteguide.com/)
 * **Spanish** thanks to Renato Alves
 * **Hungarian** thanks to Laszlo Espadas
 * **Brazilian Portuguese** thanks to Renato Alves
@@ -54,6 +54,7 @@ This plugin extends the functionality of [BuddyPress](https://wordpress.org/plug
 * Added reCaPTCHA security check method
 * Added Swedish translation by [Thord D. Hedengren](http://tdh.me)
 * Added Russian translation by [Howard Steele from SuperbWebsiteBuilders.com](http://superbwebsitebuilders.com/)
+* Updated Serbian translation by [Ogi Djuraskovic from FirstSiteGuide.com](http://firstsiteguide.com/)
 
 ### 1.4.0
 * Added Serbo-Croatian translation by [Andrijana Nikolic from WebHostingGeeks](https://webhostinggeeks.com)
