@@ -63,7 +63,7 @@ class Settings {
 			'type' => array(
 				'name' => __( 'Security check type', 'bp-security-check' ),
 				'type' => 'radio',
-				'default' => 'recaptcha',
+				'default' => 'math',
 				'options' => array(
 					'math' => __( 'Legacy math check', 'bp-security-check' ),
 					'recaptcha' => __( 'New <a href="https://www.google.com/recaptcha">reCAPTCHA</a> check', 'bp-security-check' ),
