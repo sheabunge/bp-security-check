@@ -24,7 +24,7 @@ class Plugin {
 	public $settings;
 
 	/**
-	 * @var Math_Check|Recaptcha_Check
+	 * @var Security_Check
 	 */
 	public $security_check;
 
@@ -38,7 +38,12 @@ class Plugin {
 		$this->version = $version;
 
 		$this->settings = new Settings( $this );
-		$this->security_check = new Recaptcha_Check( $this );
+
+		if ( 'math' === $this->settings->get_setting( 'type' ) ) {
+			$this->security_check = new Math_Check( $this );
+		} else {
+			$this->security_check = new Recaptcha_Check( $this );
+		}
 	}
 
 	/**

@@ -7,13 +7,7 @@ use \ReCaptcha\ReCaptcha;
  * Handles the ReCaptcha security check
  * @package Shea\BP_Security_Check
  */
-class Recaptcha_Check {
-
-	/**
-	 * The main plugin class
-	 * @var Plugin
-	 */
-	protected $plugin;
+class Recaptcha_Check extends Security_Check {
 
 	/**
 	 * The ReCaptcha site key
@@ -28,13 +22,6 @@ class Recaptcha_Check {
 	public $secret_key;
 
 	/**
-	 * @param Plugin $plugin
-	 */
-	function __construct( Plugin $plugin ) {
-		$this->plugin = $plugin;
-	}
-
-	/**
 	 * Register hooks
 	 */
 	public function run() {
@@ -46,8 +33,7 @@ class Recaptcha_Check {
 		}
 
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_script' ) );
-		add_action( 'bp_after_signup_profile_fields', array( $this, 'render' ) );
-		add_action( 'bp_signup_validate', array( $this, 'validate' ) );
+		parent::run();
 	}
 
 	/**

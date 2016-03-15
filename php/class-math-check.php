@@ -2,24 +2,9 @@
 
 namespace Shea\BP_Security_Check;
 
-class Math_Check {
-
-	/**
-	 * Holds the instance of the plugin class
-	 * @var Plugin
-	 */
-	private $plugin;
+class Math_Check extends Security_Check {
 
     public $prefix = 'bp-security-check_';
-
-    function __construct( Plugin $plugin ) {
-		$this->plugin = $plugin;
-    }
-
-    function run() {
-        add_action( 'bp_after_signup_profile_fields', array( $this, 'render' ) );
-        add_action( 'bp_signup_validate', array( $this, 'validate' ) );
-    }
 
     /**
      * Check if the user's input was correct
