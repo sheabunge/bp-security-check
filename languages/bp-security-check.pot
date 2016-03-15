@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bp-security-check 1.4.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-05 17:20+1000\n"
+"POT-Creation-Date: 2016-03-15 13:31+1100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,22 +29,41 @@ msgstr ""
 msgid "Security Question"
 msgstr ""
 
-#: php/class-recaptcha-check.php:56
+#: php/class-recaptcha-check.php:82
 msgid "Please answer the security question"
 msgstr ""
 
-#: php/class-recaptcha-check.php:64
-msgid "Sorry, please complete the security check again"
+#: php/class-recaptcha-check.php:90
+msgid "Please complete the security check again"
 msgstr ""
 
 #: php/class-settings.php:64
-msgid "reCAPTCHA site key"
+msgid "Security check type"
+msgstr ""
+
+#: php/class-settings.php:68
+msgid "Legacy math check"
+msgstr ""
+
+#: php/class-settings.php:69
+msgid "New <a href=\"https://www.google.com/recaptcha\">reCAPTCHA</a> check"
 msgstr ""
 
 #: php/class-settings.php:71
+msgid ""
+"If you choose to use the reCAPTCHA check, you will need to <a href=\"https://"
+"www.google.com/recaptcha/admin\">register your site with Google</a> and "
+"enter the site key and secret here."
+msgstr ""
+
+#: php/class-settings.php:75
+msgid "reCAPTCHA site key"
+msgstr ""
+
+#: php/class-settings.php:82
 msgid "reCAPTCHA secret key"
 msgstr ""
 
-#: php/class-settings.php:102
+#: php/class-settings.php:118
 msgid "Security Check Settings"
 msgstr ""
