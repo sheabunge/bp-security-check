@@ -16,7 +16,7 @@
 /**
  * Adds a maths sum to the BuddyPress registration page that the user
  * must answer correctly before registering
- * @version 1.4.0
+ * @version 2.0.0
  * @license https://opensource.org/licenses/MIT MIT
  * @author Shea Bunge (https://bungeshea.com)
  */
@@ -33,7 +33,7 @@ function plugin() {
 	static $plugin;
 
 	if ( is_null( $plugin ) ) {
-		$plugin = new Plugin( '1.3.2', __FILE__ );
+		$plugin = new Plugin( '2.0.0', __FILE__ );
 	}
 
 	return $plugin;
