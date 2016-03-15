@@ -2,7 +2,7 @@
 Contributors: bungeshea
 Tags: math, registration, buddypress, security, anti-spam
 Tested up to: 4.4.2
-Stable tag: 1.4
+Stable tag: 2.0.0
 License: MIT
 License URI: https://opensource.org/licences/MIT
 Donate link: https://bungeshea.com/donate/

@@ -1,7 +1,7 @@
 # BuddyPress Security Check
 
 * __Tested up to:__ WordPress 4.4.2
-* __Stable version:__ [1.4](https://downloads.wordpress.org/plugin/bp-security-check.latest-stable.zip)
+* __Stable version:__ [2.0.0](https://downloads.wordpress.org/plugin/bp-security-check.latest-stable.zip)
 * __License:__ [MIT](https://opensource.org/licenses/MIT)
 
 Combat spam registrations for a BuddyPress-powered site using Google's reCAPTCHA
