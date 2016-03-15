@@ -49,6 +49,7 @@ class Plugin {
 		$this->security_check->run();
 
 		add_action( 'plugins_loaded', array( $this, 'load_textdomain' ) );
+		add_filter( 'plugin_action_links_' . plugin_basename( $this->file ), array( $this, 'plugin_settings_link' ) );
 	}
 
 	/**
@@ -56,5 +57,25 @@ class Plugin {
 	 */
 	function load_textdomain() {
 		load_plugin_textdomain( 'bp-security-check', false, dirname( plugin_basename( $this->file ) ) . '/languages/' );
+	}
+
+	/**
+	 * Adds a link to the plugin settings
+	 *
+	 * @since 2.0.0
+	 *
+	 * @param array $links The existing plugin action links
+	 *
+	 * @return array The modified plugin action links
+	 */
+	function plugin_settings_link( $links ) {
+
+		$links['settings'] = sprintf(
+			'<a href="%s">%s</a>',
+			esc_url( bp_get_admin_url( 'admin.php?page=bp-settings' ) ),
+			esc_html__( 'Settings', 'bp-security-check' )
+		);
+
+		return $links;
 	}
 }
