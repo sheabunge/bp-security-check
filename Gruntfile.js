@@ -62,6 +62,8 @@ module.exports = function(grunt) {
 				src: [
 					'*.php',
 					'readme.txt',
+					'composer.json',
+					'composer.lock',
 					'languages/**/*',
 					'php/**/*',
 					'vendor/**/*'
