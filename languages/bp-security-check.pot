@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bp-security-check 1.4.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-15 13:31+1100\n"
+"POT-Creation-Date: 2016-03-15 16:05+1100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,23 +17,27 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: php/class-math-check.php:48
+#: php/class-math-check.php:33
 msgid "Sorry, please answer the question again"
 msgstr ""
 
-#: php/class-math-check.php:53
+#: php/class-math-check.php:38
 msgid "This is a required field"
 msgstr ""
 
-#: php/class-math-check.php:99
+#: php/class-math-check.php:84
 msgid "Security Question"
 msgstr ""
 
-#: php/class-recaptcha-check.php:82
+#: php/class-plugin.php:81
+msgid "Settings"
+msgstr ""
+
+#: php/class-recaptcha-check.php:68
 msgid "Please answer the security question"
 msgstr ""
 
-#: php/class-recaptcha-check.php:90
+#: php/class-recaptcha-check.php:76
 msgid "Please complete the security check again"
 msgstr ""
 
