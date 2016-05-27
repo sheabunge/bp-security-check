@@ -174,8 +174,7 @@ class Settings {
 				}
 
 				if ( 'text' === $field['type'] || 'radio' === $field['type'] ) {
-					$value = preg_replace( '/[^A-Za-z0-9_]/', '', $_POST[ $id ] );
-					update_option( $id, $value );
+					update_option( $id, trim( $_POST[ $id ] ) );
 				}
 			}
 		}
