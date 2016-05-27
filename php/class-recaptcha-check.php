@@ -40,7 +40,9 @@ class Recaptcha_Check extends Security_Check {
 	 * Enqueue the reCAPTCHA script
 	 */
 	public function enqueue_script() {
-		wp_enqueue_script( 'google-recaptcha', 'https://www.google.com/recaptcha/api.js' );
+		$recaptcha = 'https://www.google.com/recaptcha/api.js';
+		$recaptcha = add_query_arg( 'hl', $this->get_language_code(), $recaptcha );
+		wp_enqueue_script( 'google-recaptcha', $recaptcha );
 	}
 
 	/**
@@ -76,5 +78,46 @@ class Recaptcha_Check extends Security_Check {
 			$bp->signup->errors['security_check'] = __( 'Please complete the security check again', 'bp-security-check' );
 		}
 
+	}
+
+	/**
+	 * Infer the language code from WordPress
+	 *
+	 * @param string $locale WordPress locale code (optional)
+	 * 
+	 * @return string reCAPTCHA language code
+	 */
+	function get_language_code( $locale = '' ) {
+
+		/* If $locale is not set, use WP locale */
+		if ( empty( $locale ) ) {
+			$locale = get_locale();
+		}
+
+		/* reCAPTCHA uses a hyphen separator instead of underscore */
+		$locale = str_replace( '_', '-', $locale );
+
+		/* Save original locale in case we need it later */
+		$original_locale = $locale;
+
+		/* Use UK English for Australian English instead of US English */
+		if ( 'en-AU' === $locale ) {
+			$locale = 'en-GB';
+		}
+
+		/* If it's not Spanish (Spain), then use Spanish (Latin America) */
+		if ( 'es' === substr( $locale, 0, 2 ) && 'es-ES' !== $locale ) {
+			$locale = 'es-419';
+		}
+
+		/* Two-part locales supported by reCAPTCHA */
+		$long_locales = array( 'zh-HK', 'zh-CN', 'zh-TW', 'en-GB', 'fr-CA', 'pt-BR', 'pt-PT' );
+
+		/* Extract first part of locale */
+		if ( 2 === strpos( $locale, '-', 2 ) && ! in_array( $locale, $long_locales ) ) {
+			$locale = substr( $locale, 0, 2 );
+		}
+
+		return apply_filters( 'bp_security_check_recaptcha_lang', $locale, $original_locale );
 	}
 }
