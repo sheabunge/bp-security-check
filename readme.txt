@@ -1,8 +1,8 @@
 === BuddyPress Security Check ===
 Contributors: bungeshea
 Tags: math, registration, buddypress, security, anti-spam
-Tested up to: 4.4.2
-Stable tag: 2.0.0
+Tested up to: 5.4.2
+Stable tag: 2.1.0
 License: MIT
 License URI: https://opensource.org/licences/MIT
 Donate link: https://bungeshea.com/donate/
@@ -49,6 +49,11 @@ This plugin extends the functionality of [BuddyPress](https://wordpress.org/plug
 3. If you want to use the more secure reCAPTCHA mode, you will need to [register your site with Google](https://www.google.com/recaptcha/admin) and enter the site and secret keys. Otherwise, choose the 'legacy math method' to turn on security checks.
 
 == Changelog ==
+
+= 2.1.0 =
+* Fixed: Don't strip special characters from input fields
+* Added: Load reCAPTCHA in the same language WordPress is in
+* Fixed: Translations not loading
 
 = 2.0.0 =
 * Converted code to class-based OOP format with namespaces
