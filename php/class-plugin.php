@@ -53,7 +53,8 @@ class Plugin {
 		$this->settings->run();
 		$this->security_check->run();
 
-		add_action( 'plugins_loaded', array( $this, 'load_textdomain' ) );
+		$this->load_textdomain();
+
 		add_filter( 'plugin_action_links_' . plugin_basename( $this->file ), array( $this, 'plugin_settings_link' ) );
 	}
 
@@ -61,7 +62,15 @@ class Plugin {
 	 * Load up the localization file if WordPress is in a different language.
 	 */
 	function load_textdomain() {
-		load_plugin_textdomain( 'bp-security-check', false, dirname( plugin_basename( $this->file ) ) . '/languages/' );
+		$domain = 'bp-security-check';
+		$locale = apply_filters( 'plugin_locale', get_locale(), $domain );
+
+		// wp-content/languages/bp-security-check/bp-security-check-[locale].mo
+		load_textdomain( $domain, trailingslashit( WP_LANG_DIR ) . "$domain/$domain-$locale.mo" );
+
+		// wp-content/plugins/bp-security-check/languages/bp-security-check-[locale].mo
+		$basename = plugin_basename( dirname( __DIR__ ) );
+		load_plugin_textdomain( $domain, false, $basename . '/languages' );
 	}
 
 	/**
