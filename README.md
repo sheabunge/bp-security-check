@@ -1,7 +1,7 @@
 # BuddyPress Security Check
 
 * __Tested up to:__ WordPress 4.5.2
-* __Stable version:__ [2.1.0](https://downloads.wordpress.org/plugin/bp-security-check.latest-stable.zip)
+* __Stable version:__ [2.1.1](https://downloads.wordpress.org/plugin/bp-security-check.latest-stable.zip)
 * __License:__ [MIT](https://opensource.org/licenses/MIT)
 
 Combat spam registrations for a BuddyPress-powered site using Google's reCAPTCHA
@@ -47,7 +47,7 @@ This plugin extends the functionality of [BuddyPress](https://wordpress.org/plug
 
 ## Changelog
 
-### 2.1.1
+### 2.1.1 (2016-05-12)
 * Fixed: Centre-align math check field [[#](https://wordpress.org/support/topic/align-by-center)]
 * Fixed: Only load reCAPTCHA script on registration page [[#](https://wordpress.org/support/topic/load-recaptcha-script-only-on-the-registration-page)]
 
