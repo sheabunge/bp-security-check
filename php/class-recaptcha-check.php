@@ -40,6 +40,13 @@ class Recaptcha_Check extends Security_Check {
 	 * Enqueue the reCAPTCHA script
 	 */
 	public function enqueue_script() {
+		$page_ids = bp_core_get_directory_page_ids();
+
+		/* Only load script on registration page */
+		if ( ! is_page( $page_ids['register'] ) ) {
+			return;
+		}
+
 		$recaptcha = 'https://www.google.com/recaptcha/api.js';
 		$recaptcha = add_query_arg( 'hl', $this->get_language_code(), $recaptcha );
 		wp_enqueue_script( 'google-recaptcha', $recaptcha );
