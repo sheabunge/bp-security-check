@@ -80,7 +80,7 @@ class Math_Check extends Security_Check {
     	set_transient( $this->prefix . $uid, array( $a, $op, $b ), 12 * HOUR_IN_SECONDS );
 
     	?>
-    	<div style="float: left; clear: left; width: 48%; margin: 12px 0;" class="security-question-section">
+    	<div style="float: left; clear: left; width: 48%; margin: 12px auto;" class="security-question-section">
     		<h4><?php esc_html_e( 'Security Question', 'bp-security-check' ); ?></h4>
     		<?php do_action( 'bp_security_check_errors' ); ?>
     		<label for="bp-security-check" style="display: inline;">

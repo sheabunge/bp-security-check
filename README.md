@@ -47,6 +47,9 @@ This plugin extends the functionality of [BuddyPress](https://wordpress.org/plug
 
 ## Changelog
 
+### 2.1.1
+* Fixed: Centre-align math check field [[#](https://wordpress.org/support/topic/align-by-center)]
+
 ### 2.1.0
 * Fixed: Don't strip special characters from input fields
 * Added: Load reCAPTCHA in the same language WordPress is in
