@@ -1,0 +1,244 @@
+# Translation of Development Readme (trunk) in Belarusian
+# This file is distributed under the same license as the Development Readme (trunk) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2016-07-08 14:51+0300\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 1.8.8\n"
+"Project-Id-Version: Development Readme (trunk)\n"
+"POT-Creation-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: be\n"
+
+#. Name.
+#, fuzzy
+msgid "BuddyPress Security Check"
+msgstr "Праверка сякрэтнасці BuddyPress"
+
+#. Short description.
+msgid "Combat spam registrations for a BuddyPress-powered site using Google&#039;s reCAPTCHA"
+msgstr "Рэгістрацыі барацьбы са спамам для BuddyPress-powered site з выкарыстаннем  Google&#039;s reCAPTCHA"
+
+#. Found in description list item.
+msgid "<strong>Russian</strong> thanks to <a href=\"http://superbwebsitebuilders.com/\">Howard Steele from SuperbWebsiteBuilders.com</a>"
+msgstr "<strong>Руская мова</strong> дзякуючы <a href=\"http://superbwebsitebuilders.com/\">Howard Steele from SuperbWebsiteBuilders.com</a>"
+
+#. Found in description list item.
+msgid "<strong>Swedish</strong> thanks to <a href=\"http://tdh.me\">Thord D. Hedengren</a>"
+msgstr "<strong>Шведская мова</strong> дзякуючы <a href=\"http://tdh.me\">Thord D. Hedengren</a>"
+
+#. Found in description list item.
+msgid "<strong>French</strong> thanks to Frédérick Baldo"
+msgstr "<strong>French</strong> дзякуючы Frédérick Baldo"
+
+#. Found in description list item.
+msgid "<strong>Serbo-Croatian</strong> thanks to <a href=\"https://webhostinggeeks.com\">Andrijana Nikolic from WebHostingGeeks</a> and <a href=\"http://firstsiteguide.com/\">Ogi Djuraskovic from FirstSiteGuide.com</a>"
+msgstr "<strong>Сербахарвацкая мова</strong> дзякуючы <a href=\"https://webhostinggeeks.com\">Andrijana Nikolic from WebHostingGeeks</a> і <a href=\"http://firstsiteguide.com/\">Ogi Djuraskovic from FirstSiteGuide.com</a>"
+
+#. Found in description list item.
+msgid "<strong>Spanish</strong> thanks to Renato Alves"
+msgstr "<strong>Іспанская млва</strong> дзякуючы Renato Alves"
+
+#. Found in description list item.
+msgid "<strong>Hungarian</strong> thanks to Laszlo Espadas"
+msgstr "<strong>Венгерская мова</strong> дзякуючы Laszlo Espadas"
+
+#. Found in description list item.
+msgid "<strong>Brazilian Portuguese</strong> thanks to Renato Alves"
+msgstr "<strong>Бразільска-партугальская мова</strong> дзякуючы Renato Alves"
+
+#. Found in description list item.
+msgid "<strong>Danish</strong> thanks to Andreas Bjørn Hassing Nielsen"
+msgstr "<strong>Дацкая мова</strong> дзякуючы Andreas Bjørn Hassing Nielsen"
+
+#. Found in description list item.
+msgid "<strong>Italian</strong> thanks to <a href=\"http://nicolecurioni.com/\">Nicole Curioni</a>"
+msgstr "<strong>Італьянская мова</strong> дзякуючы <a href=\"http://nicolecurioni.com/\">Nicole Curioni</a>"
+
+#. Found in description paragraph.
+msgid "<strong>Important</strong>: Since version 2.0, this plugin now requires at least PHP 5.3. Please make sure you are running latest available version of PHP on your server."
+msgstr "<strong> Увага! </strong>: Пачынаючы з версіі 2.0, гэтая убудова цяпер патрабуе, па меншай меры PHP 5.3. Калі ласка, пераканайцеся, што вы працуеце з апошняй даступнай версіяй PHP на вашым серверы."
+
+#. Found in description paragraph.
+msgid "This plugin adds <a href=\"https://www.google.com/recaptcha/\">Google's reCAPTCHA</a> to the BuddyPress registration field to prevent bots from registering and keep your site free from spam registrations."
+msgstr "Гэты убудова дадае <a href=\"https://www.google.com/recaptcha/\"> Google рекапчи </a> ў рэгістрацыі поле BuddyPress для прадухілення рэгістрацыі  ботамі і захаваць ваш сайт свабодным ад спам-рэгістрацый."
+
+#. Found in description paragraph.
+msgid "reCAPTCHA is \"tough on bots, easy on humans\": while it is increbianle effective on preventing bots from registering, most of the time all the user needs to do to verify themselves is simply check a box."
+msgstr "Рекапча з'яўляецца \"жорсткай для ботаў, лёгкай для людзей\": у той час як ён  эфектыўны на папярэджанні  рэгістрацыі ботаў, большую частку часу карыстальніку неабходна для праверкі сябе проста ўсталяваць сцяжок."
+
+#. Found in description paragraph.
+msgid "After installing this plugin, you will need to <a href=\"https://www.google.com/recaptcha/admin\">register your site with Google</a> (requires a Google account) and enter the site key and secret key on the <strong>Settings &gt; BuddyPress &gt; Options</strong> admin menu. If you would prefer not to use Google's service, there is an alternative security check method also available; see below;"
+msgstr "Пасля ўстаноўкі гэтага плагіна, вам трэба будзе <a href=\"https://www.google.com/recaptcha/admin\"> зарэгістраваць свой сайт у Google </a> (патрабуецца уліковы запіс Google) і ўвесці ключ сайта і сакрэтны ключ уадмін меню  <strong>Settings &gt; BuddyPress &gt; Options</strong>  . Калі вы аддаеце перавагу не карыстацца паслугамі Google, існуе альтэрнатыўны спосаб праверкі бяспекі таксама даступныя; Глядзі ніжэй;"
+
+#. Found in description paragraph.
+msgid "Prior to version 2.0, a less effective security check method was used where the user needed to answer simple math sum before registering. This method is still available, and can be turned on on the <strong>Settings &gt; BuddyPress &gt; Options</strong> menu."
+msgstr "Да версіі 2.0, выкарыстоўваўся менш эфектыўны метад праверкі бяспекі, калі карыстальнік павінен быў адказаць на простую матэматычную задачу перад рэгістрацыяй. Гэты метад па-ранейшаму даступны, і можа быць уключаны <strong>Settings &gt; BuddyPress &gt; Options</strong> ."
+
+#. Found in description paragraph.
+msgid "You can learn more at the <a href=\"https://bungeshea.com/plugins/bp-security-check/\">plugin's website</a>, or on <a href=\"https://github.com/sheabunge/bp-security-check\">GitHub</a>"
+msgstr "Вы можаце даведацца больш на сайт <a href=\"https://bungeshea.com/plugins/bp-security-check/\"> плагіна </a>, або на <a href=\"https://github.com/sheabunge/bp-security-check\">GitHub</a>"
+
+#. Found in description paragraph.
+msgid "<strong>Translations</strong>"
+msgstr "<strong>Пераклады</strong>"
+
+#. Found in description paragraph.
+msgid "Thanks to the awesome work of the following translators, this plugin can be used in these languages:"
+msgstr "Дзякуючы дзіўнай працы наступных перакладчыкаў, гэты модуль можа быць выкарыстаны ў наступных мовах:"
+
+#. Found in description paragraph.
+msgid "If you have a translation to contribute, please sent it through to me <a href=\"https://bungeshea.com/contact/\">by email</a> or <a href=\"https://github.com/sheabunge/bp-security-check/pulls\">on GitHub</a>."
+msgstr "Калі ў вас ёсць пераклад, калі ласка, прышліце яго да мяне <a href=\"https://bungeshea.com/contact/\"> па электроннай пошце </a> або <a href=\"https://github.com/sheabunge/bp-security-check/pulls\">on GitHub</a>."
+
+#. Found in installation list item.
+msgid "Upload the <code>bp-security-check</code> directory to <code>/wp-content/plugins/</code>"
+msgstr "Загрузіце  каталог <code>bp-security-check</code> у  <code>/wp-content/plugins/</code>"
+
+#. Found in installation list item.
+msgid "Activate the plugin through the <strong>Plugins &gt; Installed Plugins</strong> menu in WordPress"
+msgstr "Актываваць убудову праз  <strong>Plugins &gt; Installed Plugins</strong>  меню у WordPress"
+
+#. Found in installation list item.
+msgid "Visit the <strong>Settings &gt; BuddyPress &gt; Options</strong> admin menu"
+msgstr "Наведайце strong>Settings &gt; BuddyPress &gt; Options</strong>  меню адміністратара"
+
+#. Found in installation list item.
+msgid "If you want to use the more secure reCAPTCHA mode, you will need to <a href=\"https://www.google.com/recaptcha/admin\">register your site with Google</a> and enter the site and secret keys. Otherwise, choose the 'legacy math method' to turn on security checks."
+msgstr "Калі вы хочаце выкарыстоўваць больш бяспечны рэжым рекапчі, вам трэба будзе <a href=\"https://www.google.com/recaptcha/admin\"> зарэгістраваць свой сайт у Google </a> і зайсці на сайт і увесці сакрэтныя ключы. У адваротным выпадку, выберыце  'legacy math method' , каб уключыць праверку бяспекі."
+
+#. Found in installation paragraph.
+msgid "This plugin extends the functionality of <a href=\"https://wordpress.org/plugins/buddypress\">BuddyPress</a>, which must be installed for this plugin to work"
+msgstr "Гэты убудова пашырае функцыянальнасць <a href=\"https://wordpress.org/plugins/buddypress\"> BuddyPress </a>, які павінен быць усталяваны для працы гэтай убудовы"
+
+#. Found in changelog list item.
+msgid "Fixed: Only load reCAPTCHA script on registration page [<a href=\"https://wordpress.org/support/topic/load-recaptcha-script-only-on-the-registration-page\">#</a>]"
+msgstr "Выправіць: Толькі загрузіць скрыпт рекапчы  на старонцы рэгістрацыі [<аhref=\"https://wordpress.org/support/topic/load-recaptcha-script-only-on-the-registration-page\">#</a>]"
+
+#. Found in changelog list item.
+msgid "Fixed: Centre-align math check field [<a href=\"https://wordpress.org/support/topic/align-by-center\">#</a>]"
+msgstr "Выправіць: Цэнтральнае выраўноўванне поля матэматычнай  праверкі [<a href=\"https://wordpress.org/support/topic/align-by-center\"> # </a>]"
+
+#. Found in changelog list item.
+msgid "Fixed: Don't strip special characters from input fields"
+msgstr "Выправіць: Ці не выдаляць адмысловыя знакі з поля ўводу"
+
+#. Found in changelog list item.
+msgid "Added: Load reCAPTCHA in the same language WordPress is in"
+msgstr "Паведамленні: Загрузка рекапчі на той жа мове WordPress знаходзіцца ў"
+
+#. Found in changelog list item.
+msgid "Fixed: Translations not loading"
+msgstr "Выправіць: Пераклады не адлюструецца"
+
+#. Found in changelog list item.
+msgid "Added plugin settings"
+msgstr "Дададзены налады убудовы"
+
+#. Found in changelog list item.
+msgid "Implemented Composer for package management and classloading"
+msgstr "Рэалізавана кампаноўнік для кіравання пакетамі і загрузкі класаў"
+
+#. Found in changelog list item.
+msgid "Added reCaPTCHA security check method"
+msgstr "Дададзены метад праверкі бяспекі  рекапчі"
+
+#. Found in changelog list item.
+msgid "Added Swedish translation by <a href=\"http://tdh.me\">Thord D. Hedengren</a>"
+msgstr "Дададены шведскі пераклад <a href=\"http://tdh.me\">Thord D. Hedengren</a>"
+
+#. Found in changelog list item.
+msgid "Added Russian translation by <a href=\"http://superbwebsitebuilders.com/\">Howard Steele from SuperbWebsiteBuilders.com</a>"
+msgstr "Дададзены рускі пераклад<a href=\"http://superbwebsitebuilders.com/\">Howard Steele from SuperbWebsiteBuilders.com</a>"
+
+#. Found in changelog list item.
+msgid "Updated Serbian translation by <a href=\"http://firstsiteguide.com/\">Ogi Djuraskovic from FirstSiteGuide.com</a>"
+msgstr "Абноўлены сербскі пераклад<a href=\"http://firstsiteguide.com/\">Ogi Djuraskovic from FirstSiteGuide.com</a>"
+
+#. Found in changelog list item.
+msgid "Added Serbo-Croatian translation by <a href=\"https://webhostinggeeks.com\">Andrijana Nikolic from WebHostingGeeks</a>"
+msgstr "Дададзены сербахарвацкай пераклад <a href=\"https://webhostinggeeks.com\">Andrijana Nikolic from WebHostingGeeks</a>"
+
+#. Found in changelog list item.
+msgid "Added French translation by Frédérick Baldo"
+msgstr "Дададзены французскі пераклад Фрэдэрыкам Бальдо"
+
+#. Found in changelog list item.
+msgid "Fixed subtraction sums always being marked incorrect"
+msgstr "Фіксаваныя аднімання сумы заўсёды пазначаецца памылковай"
+
+#. Found in changelog list item.
+msgid "Added Spanish translation by Renato Alves"
+msgstr "Дададзены іспанскі пераклад Renato Alves"
+
+#. Found in changelog list item.
+msgid "Fixed incorrect term in Danish translation (Sikkerhedsspørgsmål is a single word) [<a href=\"https://wordpress.org/support/topic/translation-293\">#</a>]"
+msgstr "Выпраўленая некарэктная тэрміны у дацкім перакладзе (Sikkerhedsspørgsmål гэта адно слова)<a href=\"https://wordpress.org/support/topic/translation-293\">#</a>]"
+
+#. Found in changelog list item.
+msgid "Added Danish translation by Andreas Bjørn Hassing Nielsen"
+msgstr "Дададзены дацкі пераклад  Andreas Bjørn Hassing Nielsen"
+
+#. Found in changelog list item.
+msgid "Added Italian translation by <a href=\"http://nicolecurioni.com/\">Nicole Curioni</a>"
+msgstr "дададзены італьянскі пераклад <a href=\"http://nicolecurioni.com/\">Nicole Curioni</a>"
+
+#. Found in changelog list item.
+msgid "Made transient names unique to prevent race conditions"
+msgstr "Зроблена пераходныя імёны ўнікальнымі для прадухілення гонкі умоў"
+
+#. Found in changelog list item.
+msgid "Added Hungarian translation by Laszlo Espadas"
+msgstr "Дададзены венгерскі пераклад Laszlo Espadas"
+
+#. Found in changelog list item.
+msgid "Added Brazilian Portuguese translation by Renato Alves"
+msgstr "Дададзены бразільска-партугальскі пераклад Renato Alves"
+
+#. Found in changelog list item.
+msgid "Saved sum information in database instead of hidden fields in an attempt to prevent bots"
+msgstr "Захаваныя дадзеныя сумы ў базе дадзеных замест схаваных палёў у спробе прадухіліць ботам"
+
+#. Found in changelog list item.
+msgid "Code refactoring"
+msgstr "Рэфактарынг кода"
+
+#. Found in changelog list item.
+msgid "Fixed bug preventing the plugin from loading"
+msgstr "Выпраўленая памылка прадухілення убудовы ад загрузкі"
+
+#. Found in changelog list item.
+msgid "Updated to support translations"
+msgstr "Абнаўленне для падтрымкі перакладаў"
+
+#. Found in changelog list item.
+msgid "Use mt_rand() function instead of rand()"
+msgstr "Выкарыстоўвайце функцыю mt_rand () замест rand()"
+
+#. Found in changelog list item.
+msgid "Add code documentation"
+msgstr "Дадаць код дакументацыі"
+
+#. Found in changelog list item.
+msgid "Use proper class methods, not completely static"
+msgstr "Выкарыстоўвайце належныя метады класа, а не цалкам статычныя"
+
+#. Found in changelog list item.
+msgid "Ensure that the sum never equals 0"
+msgstr "Пераканайцеся ў тым, што сума ніколі не роўная 0"
+
+#. Found in changelog list item.
+msgid "Remove buggy multiplication and division functionality"
+msgstr "Выдаліць багі функцыанальнага множання і дзялення"
+
+#. Found in changelog list item.
+msgid "Stable version release"
+msgstr "Рэліз стабільнай версіі"
+
+#. Found in changelog list item.
+msgid "Converted code to class-based OOP format with namespaces"
+msgstr "Пераўтварэнне кода  на аснове  class-based OOP format з прасторамі імёнаў"
