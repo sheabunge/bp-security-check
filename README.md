@@ -1,14 +1,14 @@
 # BuddyPress Security Check
 
-* __Tested up to:__ WordPress 4.5.2
-* __Stable version:__ [2.1.1](https://downloads.wordpress.org/plugin/bp-security-check.latest-stable.zip)
+* __Tested up to:__ WordPress 4.6
+* __Stable version:__ [2.1.2](https://downloads.wordpress.org/plugin/bp-security-check.latest-stable.zip)
 * __License:__ [MIT](https://opensource.org/licenses/MIT)
 
 Combat spam registrations for a BuddyPress-powered site using Google's reCAPTCHA
 
 ## Description
 
-> **Important**: Since version 2.0, this plugin now requires at least PHP 5.3. Please make sure you are running latest available version of PHP on your server.
+> **Important**: Since version 2.0, this plugin now requires at least PHP 5.3. Please ensure that you are running latest available version of PHP on your server.
 
 This plugin adds [Google's reCAPTCHA](https://www.google.com/recaptcha/) to the BuddyPress registration field to prevent bots from registering and keep your site free from spam registrations. 
 
@@ -33,6 +33,8 @@ Thanks to the awesome work of the following translators, this plugin can be used
 * **Brazilian Portuguese** thanks to Renato Alves
 * **Danish** thanks to Andreas Bjørn Hassing Nielsen
 * **Italian** thanks to [Nicole Curioni](http://nicolecurioni.com/)
+* **Belarusian** thanks to [Natasha from uStarCash](https://www.ustarcash.com)
+
 
 If you have a translation to contribute, please sent it through to me [by email](https://bungeshea.com/contact/) or [on GitHub](https://github.com/sheabunge/bp-security-check/pulls).
 
@@ -46,6 +48,10 @@ This plugin extends the functionality of [BuddyPress](https://wordpress.org/plug
 3. If you want to use the more secure reCAPTCHA mode, you will need to [register your site with Google](https://www.google.com/recaptcha/admin) and enter the site and secret keys. Otherwise, choose the 'legacy math method' to turn on security checks.
 
 ## Changelog
+
+### 2.1.2 (2016-08-07)
+* Added Belarusian translation by [Natasha from uStarCash](https://www.ustarcash.com)
+* Added CSS to centre-align reCAPTCHA check ([#](https://wordpress.org/support/topic/align-by-center)
 
 ### 2.1.1 (2016-05-12)
 * Fixed: Centre-align math check field [[#](https://wordpress.org/support/topic/align-by-center)]
