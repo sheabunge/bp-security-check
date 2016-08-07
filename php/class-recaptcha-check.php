@@ -58,7 +58,7 @@ class Recaptcha_Check extends Security_Check {
 	public function render() {
 		?>
 
-		<div style="float: left; clear: left; margin: 12px 0;" class="security-question-section">
+		<div style="float: left; clear: left; margin: 12px auto;" class="security-question-section">
 			<?php do_action( 'bp_security_check_errors' ); ?>
 
 			<div class="g-recaptcha" data-sitekey="<?php echo esc_attr( $this->site_key ); ?>"></div>
