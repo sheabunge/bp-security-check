@@ -60,6 +60,17 @@ class Settings {
 
 		$fields = array(
 
+			'pages' => array(
+				'name' => __( 'Enable security check on these pages', 'bp-security-check' ),
+				'type' => 'checkboxes',
+				'default' => array( 'register' ),
+				'options' => array(
+					'register' => __( 'Registration Page', 'bp-security-check' ),
+					'lost-password' => __( 'Lost Password Page', 'bp-security-check' ),
+					'login' => __( 'Login Page', 'bp-security-check' ),
+				),
+			),
+
 			'type' => array(
 				'name' => __( 'Security check type', 'bp-security-check' ),
 				'type' => 'radio',
@@ -134,7 +145,7 @@ class Settings {
 				'id' => '',
 				'name' => '',
 				'type' => 'text',
-				'default' => '',
+				'default' => null,
 				'sanitize' => '',
 			), $field );
 
@@ -168,14 +179,20 @@ class Settings {
 
 			foreach ( $this->get_fields() as $id => $field ) {
 				$id = 'bp_security_check_' . $id;
+				$type = $field['type'];
+				$valid_types = array( 'text', 'radio', 'checkboxes' );
 
-				if ( ! isset( $_POST[ $id ] ) ) {
+				if ( ! isset( $_POST[ $id ] ) || ! in_array( $type, $valid_types ) ) {
 					continue;
 				}
 
-				if ( 'text' === $field['type'] || 'radio' === $field['type'] ) {
-					update_option( $id, trim( $_POST[ $id ] ) );
+				$value = $_POST[ $id ];
+
+				if ( 'text' === $type ) {
+					$value = trim( $value );
 				}
+
+				update_option( $id, $value );
 			}
 		}
 	}
@@ -217,7 +234,32 @@ class Settings {
 		echo implode( '<br>', $radios ), '</p>';
 
 		if ( isset( $field['desc'] ) ) {
-			echo '<br><p class="description">', $field['desc'], '</p>';
+			echo '<p class="description">', $field['desc'], '</p>';
+		}
+	}
+
+	/**
+	 * Render a checkboxes input field
+	 * @param array $field
+	 */
+	public function checkboxes_input_field( $field ) {
+		echo '<p>';
+		$boxes = array();
+
+		foreach ( $field['options'] as $option => $label ) {
+			$boxes[] = sprintf(
+				'<label><input name="%s[]" type="checkbox" value="%s"%s> %s</label>',
+				$field['id'],
+				$option,
+				checked( in_array( $option, $field['value'] ), true, false ),
+				$label
+			);
+		}
+
+		echo implode( "\n<br>\n", $boxes ), '</p>';
+
+		if ( isset( $field['desc'] ) ) {
+			echo '<p class="description">', $field['desc'], '</p>';
 		}
 	}
 }
