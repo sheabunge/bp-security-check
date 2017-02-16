@@ -14,10 +14,17 @@ class Math_Check extends Security_Check {
 	 */
 	public $prefix = 'bp-security-check_';
 
+	public function run() {
+	    parent::run();
+	    if ( $this->display_on_login || $this->display_on_lostpassword ) {
+	        add_action( 'login_enqueue_scripts', array( $this, 'login_styles' ) );
+        }
+    }
+
 	/**
 	 * Check if the user's input was correct
 	 */
-	function validate() {
+	public function validate() {
 		$uid = $_POST['bp-security-check-uid'];
 		$sum = get_transient( $this->prefix . $uid );
 
@@ -106,10 +113,10 @@ class Math_Check extends Security_Check {
 	/**
 	 * Render the input fields
 	 */
-	function render() {}
+	public function render() {}
 
 	/**
-	 * Render the input fields
+	 * Render the input fields on the registration page
 	 */
 	public function render_register() {
     	$question = $this->generate_question();
@@ -128,19 +135,43 @@ class Math_Check extends Security_Check {
 	}
 
 	/**
-	 * Render the input fields
+	 * Render the input fields on the login page
 	 */
 	public function render_login() {
 		$question = $this->generate_question();
 
 		?>
-        <p>
+        <p class="security-question-section">
             <label for="bp-security-check">
-                Security Check<br><strong><?php echo $question['sum']; ?></strong>
+                Security Check<br>
+                <strong><?php echo $question['sum']; ?></strong>
                 <input type="number" name="bp-security-check" class="input" id="bp-security-check" required="required">
                 <input type="hidden" name="bp-security-check-uid" value="<?php echo $question['uid']; ?>">
             </label>
         </p>
+		<?php
+	}
+
+	/**
+	 * Display styles on the login page
+	 */
+	public function login_styles() {
+		?>
+        <style>
+            label[for=bp-security-check] strong {
+                float: left;
+                font-size: 24px;
+                padding: 3px;
+                margin: 2px 6px 16px 0;
+            }
+
+            input[name=bp-security-check] {
+                width: 60% !important;
+                float: right;
+                display: inline-block;
+            }
+
+        </style>
 		<?php
 	}
 }
