@@ -9,20 +9,6 @@ namespace Shea\BP_Security_Check;
 class Settings {
 
 	/**
-	 * Holds the instance of the plugin class
-	 * @var Plugin
-	 */
-	protected $plugin;
-
-	/**
-	 * Class constructor
-	 * @param Plugin $plugin
-	 */
-	function __construct( Plugin $plugin ) {
-		$this->plugin = $plugin;
-	}
-
-	/**
 	 * Run the class actions
 	 */
 	public function run() {

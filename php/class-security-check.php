@@ -1,36 +1,58 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: shea
- * Date: 15/03/16
- * Time: 3:06 PM
- */
 
 namespace Shea\BP_Security_Check;
+use \WP_User;
+use \WP_Error;
 
-
+/**
+ * Base class for different security check types
+ * @package Shea\BP_Security_Check
+ */
 abstract class Security_Check {
 
 	/**
-	 * The main plugin class
-	 * @var Plugin
+	 * List of pages to display the check on
+	 * @var array
 	 */
-	protected $plugin;
+    public $active_pages;
 
 	/**
-	 * @param Plugin $plugin
+	 * Whether to display on the login or register page
+	 * @var bool
 	 */
-	function __construct( Plugin $plugin ) {
-		$this->plugin = $plugin;
-	}
+    public $display_on_login, $display_on_register;
 
 	/**
-	 * Register hooks
+	 * Constructor function
+	 *
+	 * @param array $active_pages
+	 */
+    public function __construct( array $active_pages ) {
+	    $this->active_pages = $active_pages;
+	    $this->display_on_login = in_array( 'login', $this->active_pages );
+	    $this->display_on_register = in_array( 'register', $this->active_pages );
+    }
+
+	/**
+	 * Run the class actions
 	 */
 	public function run() {
-		add_action( 'bp_signup_validate', array( $this, 'validate' ) );
-		add_action( 'bp_after_signup_profile_fields', array( $this, 'render' ) );
+
+		if ( $this->display_on_login ) {
+			add_action( 'login_form', array( $this, 'render_login' ) );
+			add_action( 'wp_authenticate_user', array( $this, 'validate_login' ) );
+        }
+
+		if ( $this->display_on_register ) {
+			add_action( 'bp_signup_validate', array( $this, 'validate_register' ) );
+			add_action( 'bp_after_signup_profile_fields', array( $this, 'render_register' ) );
+		}
 	}
+
+	/**
+	 * Validate the security question
+	 */
+	public abstract function validate();
 
 	/**
 	 * Render the security question
@@ -38,7 +60,51 @@ abstract class Security_Check {
 	public abstract function render();
 
 	/**
-	 * Validate the security question
+	 * Validate the security question on the login page
+	 *
+	 * @param WP_User $user
+	 *
+	 * @return WP_Error|WP_User
 	 */
-	public abstract function validate();
+	public function validate_login( $user ) {
+		$result = $this->validate();
+
+		if ( $result ) {
+			return new WP_Error( 'security_check_error', $result );
+		}
+
+		return $user;
+	}
+
+	/**
+	 * Render the security question on the login page
+	 */
+	public function render_login() {
+		echo '<p class="security-question-section">';
+		$this->render();
+		echo '</p>';
+	}
+
+	/**
+	 * Validate the security question on the register page
+	 */
+	public function validate_register() {
+		global $bp;
+
+		$result = $this->validate();
+
+		if ( $result ) {
+			$bp->signup->errors['security_check'] = $result;
+		}
+	}
+
+	/**
+	 * Render the security question on the register page
+	 */
+	public function render_register() {
+		echo '<div style="float: left; clear: left; margin: 12px auto;" class="security-question-section">';
+		$this->render();
+		do_action( 'bp_security_check_errors' );
+		echo '</div>';
+	}
 }

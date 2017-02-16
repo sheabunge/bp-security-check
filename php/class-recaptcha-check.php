@@ -22,69 +22,80 @@ class Recaptcha_Check extends Security_Check {
 	public $secret_key;
 
 	/**
-	 * Register hooks
+	 * Register action hooks
 	 */
 	public function run() {
-		$this->site_key = $this->plugin->settings->get_setting( 'recaptcha_site_key' );
-		$this->secret_key = $this->plugin->settings->get_setting( 'recaptcha_secret_key' );
+		$this->site_key = plugin()->settings->get_setting( 'recaptcha_site_key' );
+		$this->secret_key = plugin()->settings->get_setting( 'recaptcha_secret_key' );
 
 		if ( ! $this->site_key || ! $this->secret_key ) {
 			return;
 		}
 
-		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_script' ) );
 		parent::run();
+
+		if ( $this->display_on_register ) {
+			add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_frontend_scripts' ) );
+		}
+
+		if ( $this->display_on_login ) {
+			add_action( 'login_enqueue_scripts', array( $this, 'enqueue_login_scripts' ) );
+		}
+	}
+
+	/**
+	 * Enqueue scripts and styles on the site front-end
+	 */
+	public function enqueue_frontend_scripts() {
+		$page_ids = bp_core_get_directory_page_ids();
+
+		/* Only load script on registration page */
+		if ( is_page( $page_ids['register'] ) ) {
+			$this->enqueue_script();
+		}
+	}
+
+	/**
+	 * Enqueue scripts and styles on the login page
+	 */
+	public function enqueue_login_scripts() {
+		$this->enqueue_script();
+		echo '<style> #login { width: 350px !important; } </style>';
 	}
 
 	/**
 	 * Enqueue the reCAPTCHA script
 	 */
 	public function enqueue_script() {
-		$page_ids = bp_core_get_directory_page_ids();
-
-		/* Only load script on registration page */
-		if ( ! is_page( $page_ids['register'] ) ) {
-			return;
-		}
-
 		$recaptcha = 'https://www.google.com/recaptcha/api.js';
 		$recaptcha = add_query_arg( 'hl', $this->get_language_code(), $recaptcha );
 		wp_enqueue_script( 'google-recaptcha', $recaptcha );
 	}
 
 	/**
-	 * Render the security question
+	 * Render the security question field
 	 */
 	public function render() {
-		?>
-
-		<div style="float: left; clear: left; margin: 12px auto;" class="security-question-section">
-			<?php do_action( 'bp_security_check_errors' ); ?>
-
-			<div class="g-recaptcha" data-sitekey="<?php echo esc_attr( $this->site_key ); ?>"></div>
-		</div>
-
-		<?php
+		printf( '<div class="g-recaptcha" data-sitekey="%s"></div>', esc_attr( $this->site_key ) );
 	}
 
 	/**
 	 * Validate the security question
 	 */
 	public function validate() {
-		global $bp;
 
 		if ( empty( $_POST['g-recaptcha-response'] ) ) {
-			$bp->signup->errors['security_check'] = __( 'Please answer the security question', 'bp-security-check' );
-			return;
+			return __( 'Please answer the security question', 'bp-security-check' );
 		}
 
 		$recaptcha = new ReCaptcha( $this->secret_key );
 		$response = $recaptcha->verify( $_POST['g-recaptcha-response'] );
 
 		if ( ! $response->isSuccess() ) {
-			$bp->signup->errors['security_check'] = __( 'Please complete the security check again', 'bp-security-check' );
+			return __( 'Please complete the security check again', 'bp-security-check' );
 		}
 
+		return '';
 	}
 
 	/**
