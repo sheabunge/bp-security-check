@@ -1,8 +1,8 @@
 {
   "name": "bp-security-check",
   "title": "BuddyPress Security Check",
-  "version": "2.1.2",
-  "description": "Help combat spam registrations by forcing the user to answer a simple math sum while registering for your BuddyPress-powered site",
+  "version": "3.0.0",
+  "description": "Help combat spam registrations by forcing the user to answer a simple math sum while registering for and logging into your BuddyPress-powered site",
   "main": "Gruntfile.js",
   "repository": {
     "type": "git",
