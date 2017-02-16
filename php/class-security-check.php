@@ -14,25 +14,25 @@ abstract class Security_Check {
 	 * List of pages to display the check on
 	 * @var array
 	 */
-    public $active_pages;
+	public $active_pages;
 
 	/**
 	 * Whether to display on the login or register page
 	 * @var bool
 	 */
-    public $display_on_login, $display_on_register;
+	public $display_on_login, $display_on_register;
 
 	/**
 	 * Constructor function
 	 *
 	 * @param array $active_pages
 	 */
-    public function __construct( array $active_pages ) {
-	    $this->active_pages = $active_pages;
-	    $this->display_on_login = in_array( 'login', $this->active_pages );
-	    $this->display_on_register = in_array( 'register', $this->active_pages );
-	    $this->display_on_lostpassword = in_array( 'lost-password', $this->active_pages );
-    }
+	public function __construct( array $active_pages ) {
+		$this->active_pages            = $active_pages;
+		$this->display_on_login        = in_array( 'login', $this->active_pages );
+		$this->display_on_register     = in_array( 'register', $this->active_pages );
+		$this->display_on_lostpassword = in_array( 'lost-password', $this->active_pages );
+	}
 
 	/**
 	 * Run the class actions
@@ -41,7 +41,7 @@ abstract class Security_Check {
 
 		if ( $this->display_on_register ) {
 			add_action( 'bp_signup_validate', array( $this, 'validate_register' ) );
-			add_action( 'bp_after_signup_profile_fields', array( $this, 'render_register' ) );
+			add_action( 'bp_before_registration_submit_buttons', array( $this, 'render_register' ) );
 		}
 
 		if ( $this->display_on_login ) {
@@ -109,8 +109,8 @@ abstract class Security_Check {
 	 */
 	public function render_register() {
 		echo '<div style="float: left; clear: left; margin: 12px auto;" class="security-question-section">';
-		$this->render();
 		do_action( 'bp_security_check_errors' );
+		$this->render();
 		echo '</div>';
 	}
 
@@ -129,4 +129,5 @@ abstract class Security_Check {
 		}
 
 		return $errors;
-	}}
+	}
+}
