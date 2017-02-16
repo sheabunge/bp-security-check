@@ -1,7 +1,7 @@
 # BuddyPress Security Check
 
 * __Tested up to:__ WordPress 4.7.2
-* __Stable version:__ [3.0.0](https://downloads.wordpress.org/plugin/bp-security-check.latest-stable.zip)
+* __Stable version:__ [3.1.0](https://downloads.wordpress.org/plugin/bp-security-check.latest-stable.zip)
 * __License:__ [MIT](https://opensource.org/licenses/MIT)
 
 Combat spam registrations for a BuddyPress-powered site using Google's reCAPTCHA
@@ -48,6 +48,9 @@ This plugin extends the functionality of [BuddyPress](https://wordpress.org/plug
 3. If you want to use the more secure reCAPTCHA mode, you will need to [register your site with Google](https://www.google.com/recaptcha/admin) and enter the site and secret keys. Otherwise, choose the 'legacy math method' to turn on security checks.
 
 ## Changelog
+
+### 3.1.0 (2017-02-16)
+* Move registration security question to just above submit button
 
 ### 3.0.0 (2017-02-16)
 * Added optional security checks to login and lost password forms
