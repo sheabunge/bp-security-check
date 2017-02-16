@@ -31,6 +31,7 @@ abstract class Security_Check {
 	    $this->active_pages = $active_pages;
 	    $this->display_on_login = in_array( 'login', $this->active_pages );
 	    $this->display_on_register = in_array( 'register', $this->active_pages );
+	    $this->display_on_lostpassword = in_array( 'lost-password', $this->active_pages );
     }
 
 	/**
@@ -38,14 +39,19 @@ abstract class Security_Check {
 	 */
 	public function run() {
 
-		if ( $this->display_on_login ) {
-			add_action( 'login_form', array( $this, 'render_login' ) );
-			add_action( 'wp_authenticate_user', array( $this, 'validate_login' ) );
-        }
-
 		if ( $this->display_on_register ) {
 			add_action( 'bp_signup_validate', array( $this, 'validate_register' ) );
 			add_action( 'bp_after_signup_profile_fields', array( $this, 'render_register' ) );
+		}
+
+		if ( $this->display_on_login ) {
+			add_action( 'login_form', array( $this, 'render_login' ) );
+			add_action( 'wp_authenticate_user', array( $this, 'validate_login' ) );
+		}
+
+		if ( $this->display_on_lostpassword ) {
+			add_action( 'lostpassword_form', array( $this, 'render_login' ) );
+			add_action( 'lostpassword_post', array( $this, 'validate_lostpassword' ) );
 		}
 	}
 
@@ -80,9 +86,9 @@ abstract class Security_Check {
 	 * Render the security question on the login page
 	 */
 	public function render_login() {
-		echo '<p class="security-question-section">';
+		echo '<div style="margin-bottom: 15px;" class="security-question-section">';
 		$this->render();
-		echo '</p>';
+		echo '</div>';
 	}
 
 	/**
@@ -107,4 +113,20 @@ abstract class Security_Check {
 		do_action( 'bp_security_check_errors' );
 		echo '</div>';
 	}
-}
+
+	/**
+	 * Validate the security question on the lost password page
+	 *
+	 * @param WP_Error $errors WP_Error object
+	 *
+	 * @return WP_Error
+	 */
+	public function validate_lostpassword( $errors ) {
+		$result = $this->validate();
+
+		if ( $result ) {
+			$errors->add( 'security_check_error', $result );
+		}
+
+		return $errors;
+	}}

@@ -38,7 +38,7 @@ class Recaptcha_Check extends Security_Check {
 			add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_frontend_scripts' ) );
 		}
 
-		if ( $this->display_on_login ) {
+		if ( $this->display_on_login || $this->display_on_lostpassword ) {
 			add_action( 'login_enqueue_scripts', array( $this, 'enqueue_login_scripts' ) );
 		}
 	}
