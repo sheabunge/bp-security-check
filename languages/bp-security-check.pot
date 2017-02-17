@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: bp-security-check 3.1.0\n"
+"Project-Id-Version: bp-security-check 3.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-16 15:45+1100\n"
+"POT-Creation-Date: 2017-02-18 01:37+1100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,11 +33,11 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: php/class-recaptcha-check.php:88
+#: php/class-recaptcha-check.php:132
 msgid "Please answer the security question"
 msgstr ""
 
-#: php/class-recaptcha-check.php:95
+#: php/class-recaptcha-check.php:139
 msgid "Please complete the security check again"
 msgstr ""
 
@@ -84,6 +84,30 @@ msgstr ""
 msgid "reCAPTCHA secret key"
 msgstr ""
 
-#: php/class-settings.php:115
+#: php/class-settings.php:86
+msgid "Widget theme"
+msgstr ""
+
+#: php/class-settings.php:90
+msgid "Light"
+msgstr ""
+
+#: php/class-settings.php:91
+msgid "Dark"
+msgstr ""
+
+#: php/class-settings.php:96
+msgid "CAPTCHA type"
+msgstr ""
+
+#: php/class-settings.php:100
+msgid "Image"
+msgstr ""
+
+#: php/class-settings.php:101
+msgid "Audio"
+msgstr ""
+
+#: php/class-settings.php:135
 msgid "Security Check Settings"
 msgstr ""
