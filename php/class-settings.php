@@ -65,7 +65,7 @@ class Settings {
 					'math' => __( 'Legacy math check', 'bp-security-check' ),
 					'recaptcha' => __( 'New <a href="https://www.google.com/recaptcha">reCAPTCHA</a> check', 'bp-security-check' ),
 				),
-				'desc' => __( 'If you choose to use the reCAPTCHA check, you will need to <a href="https://www.google.com/recaptcha/admin">register your site with Google</a> and enter the site key and secret here.' ),
+				'desc' => '<br>' . __( 'If you choose to use the reCAPTCHA check, you will need to <a href="https://www.google.com/recaptcha/admin">register your site with Google</a> and enter the site key and secret here.' ),
 			),
 
 			'recaptcha_site_key' => array(
@@ -80,6 +80,26 @@ class Settings {
 				'type' => 'text',
 				'default' => '',
 				'size' => 40,
+			),
+
+			'recaptcha_theme' => array(
+				'name' => __( 'Widget theme', 'bp-security-check' ),
+				'type' => 'radio',
+				'default' => 'light',
+				'options' => array(
+					'light' => __( 'Light', 'bp-security-check' ),
+					'dark' => __( 'Dark', 'bp-security-check' ),
+				),
+			),
+
+			'recaptcha_type' => array(
+				'name' => __( 'CAPTCHA type', 'bp-security-check' ),
+				'type' => 'radio',
+				'default' => 'image',
+				'options' => array(
+					'image' => __( 'Image', 'bp-security-check' ),
+					'audio' => __( 'Audio', 'bp-security-check' )
+				),
 			),
 		);
 
@@ -121,8 +141,12 @@ class Settings {
 
 		if ( 'recaptcha' !== $this->get_setting( 'type' ) ) {
 			unset( $fields['type']['desc'] );
-			unset( $fields['recaptcha_site_key'] );
-			unset( $fields['recaptcha_secret_key'] );
+
+			foreach ( $fields as $field_name => $field_value ) {
+				if ( 'recaptcha_' === substr( $field_name, 0, 10 )  ) {
+					unset( $fields[ $field_name ] );
+				}
+			}
 		}
 
 		foreach ( $fields as $id => $field ) {

@@ -22,11 +22,28 @@ class Recaptcha_Check extends Security_Check {
 	public $secret_key;
 
 	/**
+	 * The color theme of the widget
+	 * @var string
+	 */
+	public $theme;
+
+	/**
+	 * The type of CAPTCHA to serbe
+	 * @var string
+	 */
+	public $type;
+
+	/**
 	 * Register action hooks
 	 */
 	public function run() {
-		$this->site_key = plugin()->settings->get_setting( 'recaptcha_site_key' );
-		$this->secret_key = plugin()->settings->get_setting( 'recaptcha_secret_key' );
+		$settings = plugin()->settings;
+
+		$this->site_key = $settings->get_setting( 'recaptcha_site_key' );
+		$this->secret_key = $settings->get_setting( 'recaptcha_secret_key' );
+
+		$this->theme = $settings->get_setting( 'recaptcha_theme' );
+		$this->type = $settings->get_setting( 'recaptcha_type' );
 
 		if ( ! $this->site_key || ! $this->secret_key ) {
 			return;
@@ -90,7 +107,20 @@ class Recaptcha_Check extends Security_Check {
 	 * Render the security question field
 	 */
 	public function render() {
-		printf( '<div class="g-recaptcha" data-sitekey="%s"></div>', esc_attr( $this->site_key ) );
+		$atts = array(
+			'data-sitekey' => $this->site_key,
+			'data-theme' => $this->theme,
+			'data-type' => $this->type,
+		);
+
+		$atts = apply_filters( 'bp_security_check_recaptcha_atts', $atts );
+		$html = '<div class="g-recaptcha"';
+
+		foreach ( $atts as $att_name => $att_value ) {
+			$html .= sprintf( ' %s="%s"', $att_name, esc_attr( $att_value ) );
+		}
+
+		echo $html . '></div>';
 	}
 
 	/**
