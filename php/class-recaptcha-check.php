@@ -60,7 +60,21 @@ class Recaptcha_Check extends Security_Check {
 	 */
 	public function enqueue_login_scripts() {
 		$this->enqueue_script();
-		echo '<style> #login { width: 350px !important; } </style>';
+
+		?>
+		<style>
+			#login {
+				width: 350px !important;
+			}
+			.security-question-section {
+				text-align: center;
+				margin-bottom: 10px !important;
+			}
+			.g-recaptcha {
+				display: inline-block;
+			}
+		</style>
+		<?php
 	}
 
 	/**

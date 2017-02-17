@@ -86,7 +86,7 @@ abstract class Security_Check {
 	 * Render the security question on the login page
 	 */
 	public function render_login() {
-		echo '<div style="margin-bottom: 15px;" class="security-question-section">';
+		echo '<div class="security-question-section">';
 		$this->render();
 		echo '</div>';
 	}
