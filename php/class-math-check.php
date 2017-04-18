@@ -119,17 +119,18 @@ class Math_Check extends Security_Check {
 	 * Render the input fields on the registration page
 	 */
 	public function render_register() {
-    	$question = $this->generate_question();
+		$question = $this->generate_question();
 
-	    ?>
-        <div style="float: left; clear: left; width: 48%; margin: 12px auto;" class="security-question-section">
-            <h4><?php esc_html_e( 'Security Question', 'bp-security-check' ); ?></h4>
-            <label for="bp-security-check">
-                <?php echo $question['sum']; ?>
-            </label>
-            <input type="hidden" name="bp-security-check-uid" value="<?php echo $question['uid']; ?>">
-            <input type="number" name="bp-security-check" id="bp-security-check" required="required">
-        </div>
+		?>
+		<div style="float: left; clear: left; width: 48%; margin: 12px auto;" class="security-question-section">
+			<h4><?php esc_html_e( 'Security Question', 'bp-security-check' ); ?></h4>
+			<?php do_action( 'bp_security_check_errors' ); ?>
+			<label for="bp-security-check">
+				<?php echo $question['sum']; ?>
+			</label>
+			<input type="hidden" name="bp-security-check-uid" value="<?php echo $question['uid']; ?>">
+			<input type="number" name="bp-security-check" id="bp-security-check" required="required">
+		</div>
 
 		<?php
 	}
@@ -141,14 +142,14 @@ class Math_Check extends Security_Check {
 		$question = $this->generate_question();
 
 		?>
-        <p class="security-question-section">
-            <label for="bp-security-check">
-                Security Check<br>
-                <strong><?php echo $question['sum']; ?></strong>
-                <input type="number" name="bp-security-check" class="input" id="bp-security-check" required="required">
-                <input type="hidden" name="bp-security-check-uid" value="<?php echo $question['uid']; ?>">
-            </label>
-        </p>
+		<p class="security-question-section">
+			<label for="bp-security-check">
+				Security Check<br>
+				<strong><?php echo $question['sum']; ?></strong>
+				<input type="number" name="bp-security-check" class="input" id="bp-security-check" required="required">
+				<input type="hidden" name="bp-security-check-uid" value="<?php echo $question['uid']; ?>">
+			</label>
+		</p>
 		<?php
 	}
 
@@ -157,21 +158,21 @@ class Math_Check extends Security_Check {
 	 */
 	public function login_styles() {
 		?>
-        <style>
-            label[for=bp-security-check] strong {
-                float: left;
-                font-size: 24px;
-                padding: 3px;
-                margin: 2px 6px 16px 0;
-            }
+		<style>
+			label[for=bp-security-check] strong {
+				float: left;
+				font-size: 24px;
+				padding: 3px;
+				margin: 2px 6px 16px 0;
+			}
 
-            input[name=bp-security-check] {
-                width: 60% !important;
-                float: right;
-                display: inline-block;
-            }
+			input[name=bp-security-check] {
+				width: 60% !important;
+				float: right;
+				display: inline-block;
+			}
 
-        </style>
+		</style>
 		<?php
 	}
 }
