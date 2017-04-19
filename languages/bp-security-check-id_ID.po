@@ -1,0 +1,32 @@
+﻿# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: bp-security-check 1.2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-05-14 10:21+1000\n"
+"PO-Revision-Date: 2017-04-07 17:59+0100\n"
+"Last-Translator: Jordan Silaen <jordan.silaen@chameleonjohn.com>\n"
+"Language-Team: ChameleonJohn.com <jordan.silaen@chameleonjohn.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.5\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: id_ID\n"
+
+#: bp-security-check.php:56
+msgid "Sorry, please answer the question again"
+msgstr "Maaf, silahkan menjawab pertanyaan lagi"
+
+#: bp-security-check.php:61
+msgid "This is a required field"
+msgstr "Ini adalah kolom yang harus diisi"
+
+#: bp-security-check.php:107
+msgid "Security Question"
+msgstr "pertanyaan keamanan"
+
