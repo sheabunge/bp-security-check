@@ -1,8 +1,8 @@
 === BuddyPress Security Check ===
 Contributors: bungeshea
 Tags: math, registration, buddypress, security, anti-spam
-Tested up to: 4.7.2
-Stable tag: 3.2.0
+Tested up to: 4.7.3
+Stable tag: 3.2.1
 License: MIT
 License URI: https://opensource.org/licences/MIT
 Donate link: https://bungeshea.com/donate/
@@ -11,7 +11,7 @@ Combat spam registrations for a BuddyPress-powered site using Google's reCAPTCHA
 
 == Description ==
 
-> **Important**: Since version 2.0, this plugin now requires at least PHP 5.3. Please make sure you are running latest available version of PHP on your server.
+> **Important**: Since version 2.0, this plugin now requires at least PHP 5.3. Please ensure you are running the latest available version of PHP on your server.
 
 This plugin adds [Google's reCAPTCHA](https://www.google.com/recaptcha/) to the BuddyPress registration page and WordPress login page to prevent bots from registering and keep your site free from spam registrations.
 
@@ -52,7 +52,7 @@ This plugin extends the functionality of [BuddyPress](https://wordpress.org/plug
 
 == Changelog ==
 
-= 3.2.1 (unreleased) =
+= 3.2.1 (2017-04-19) =
 * Added Indonesian translation by [Jordan Silaen from ChameleonJohn.com](https://www.chameleonjohn.com/)
 * Fixed bug causing error messages to not display on the register page for the legacy math security check [[#](https://wordpress.org/support/topic/why-not-give-an-error-when-enter-wrong-answer/)]
 
