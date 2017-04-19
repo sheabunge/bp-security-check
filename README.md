@@ -24,6 +24,7 @@ You can learn more at the [plugin's website](https://bungeshea.com/plugins/bp-se
 
 Thanks to the awesome work of the following translators, this plugin can be used in these languages:
 
+* **Indonesian** thanks to [Jordan Silaen from ChameleonJohn.com](https://www.chameleonjohn.com/)
 * **Russian** thanks to [Howard Steele from SuperbWebsiteBuilders.com](http://superbwebsitebuilders.com/)
 * **Swedish** thanks to [Thord D. Hedengren](http://tdh.me)
 * **French** thanks to Frédérick Baldo
@@ -34,7 +35,6 @@ Thanks to the awesome work of the following translators, this plugin can be used
 * **Danish** thanks to Andreas Bjørn Hassing Nielsen
 * **Italian** thanks to [Nicole Curioni](http://nicolecurioni.com/)
 * **Belarusian** thanks to [Natasha from uStarCash](https://www.ustarcash.com)
-
 
 If you have a translation to contribute, please sent it through to me [by email](https://bungeshea.com/contact/) or [on GitHub](https://github.com/sheabunge/bp-security-check/pulls).
 
@@ -48,6 +48,10 @@ This plugin extends the functionality of [BuddyPress](https://wordpress.org/plug
 3. If you want to use the more secure reCAPTCHA mode, you will need to [register your site with Google](https://www.google.com/recaptcha/admin) and enter the site and secret keys. Otherwise, choose the 'legacy math method' to turn on security checks.
 
 ## Changelog
+
+### 3.2.1 (unreleased)
+* Added Indonesian translation by [Jordan Silaen from ChameleonJohn.com](https://www.chameleonjohn.com/)
+* Fixed bug causing error messages to not display on the register page for the legacy math security check [[#](https://wordpress.org/support/topic/why-not-give-an-error-when-enter-wrong-answer/)]
 
 ### 3.2.0 (2017-02-18)
 * Improved styling of reCAPTCHA on login and lost password pages
