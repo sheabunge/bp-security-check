@@ -1,7 +1,7 @@
 === BuddyPress Security Check ===
 Contributors: bungeshea
 Tags: math, registration, buddypress, security, anti-spam
-Tested up to: 4.7.3
+Tested up to: 4.9.2
 Stable tag: 3.2.1
 License: MIT
 License URI: https://opensource.org/licences/MIT

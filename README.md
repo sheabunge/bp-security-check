@@ -1,6 +1,6 @@
 # BuddyPress Security Check
 
-* __Tested up to:__ WordPress 4.7.3
+* __Tested up to:__ WordPress 4.9.2
 * __Stable version:__ [3.2.1](https://downloads.wordpress.org/plugin/bp-security-check.latest-stable.zip)
 * __License:__ [MIT](https://opensource.org/licenses/MIT)
 
