@@ -64,10 +64,9 @@ class Recaptcha_Check extends Security_Check {
 	 * Enqueue scripts and styles on the site front-end
 	 */
 	public function enqueue_frontend_scripts() {
-		$page_ids = bp_core_get_directory_page_ids();
 
 		/* Only load script on registration page */
-		if ( is_page( $page_ids['register'] ) ) {
+		if ( 'register' === bp_current_component() ) {
 			$this->enqueue_script();
 		}
 	}
