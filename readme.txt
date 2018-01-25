@@ -2,7 +2,7 @@
 Contributors: bungeshea
 Tags: math, registration, buddypress, security, anti-spam
 Tested up to: 4.9.2
-Stable tag: 3.2.1
+Stable tag: 3.2.2
 License: MIT
 License URI: https://opensource.org/licences/MIT
 Donate link: https://bungeshea.com/donate/
@@ -52,6 +52,10 @@ This plugin extends the functionality of [BuddyPress](https://wordpress.org/plug
 
 == Changelog ==
 
+= 3.2.2 (2018-01-26) =
+* Fixed issue preventing reCAPTCHA script from sometimes not loading on the registration page [[#](https://wordpress.org/support/topic/recaptcha-on-lost-passwords-and-login-page/)]
+* Fixed: Ensure that the login check is only validated on the login page [[#](https://github.com/sheabunge/bp-security-check/issues/8)]
+
 = 3.2.1 (2017-04-19) =
 * Added Indonesian translation by [Jordan Silaen from ChameleonJohn.com](https://www.chameleonjohn.com/)
 * Fixed bug causing error messages to not display on the register page for the legacy math security check [[#](https://wordpress.org/support/topic/why-not-give-an-error-when-enter-wrong-answer/)]
@@ -68,7 +72,7 @@ This plugin extends the functionality of [BuddyPress](https://wordpress.org/plug
 
 = 2.1.2 (2016-08-07) =
 * Added Belarusian translation by [Natasha from uStarCash](https://www.ustarcash.com)
-* Added CSS to centre-align reCAPTCHA check ([#](https://wordpress.org/support/topic/align-by-center)
+* Added CSS to centre-align reCAPTCHA check [[#](https://wordpress.org/support/topic/align-by-center)]
 
 = 2.1.1 (2016-05-12) =
 * Fixed: Centre-align math check field [[#](https://wordpress.org/support/topic/align-by-center)]
@@ -127,6 +131,9 @@ This plugin extends the functionality of [BuddyPress](https://wordpress.org/plug
 * Stable version release
 
 == Upgrade Notice ==
+
+= 3.2.2 =
+Bug fixes for conflict with other plugins
 
 = 3.2.0 =
 Now supports audio reCAPTCHA and dark theme
