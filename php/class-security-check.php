@@ -73,10 +73,13 @@ abstract class Security_Check {
 	 * @return WP_Error|WP_User
 	 */
 	public function validate_login( $user ) {
-		$result = $this->validate();
 
-		if ( $result ) {
-			return new WP_Error( 'security_check_error', $result );
+		if ( did_action( 'login_init' ) ) {
+			$result = $this->validate();
+
+			if ( $result ) {
+				return new WP_Error( 'security_check_error', $result );
+			}
 		}
 
 		return $user;
